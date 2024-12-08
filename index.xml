@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Alicia Gil Matute on My New Hugo Site</title>
-    <link>https://example.org/</link>
-    <description>Recent content in Alicia Gil Matute on My New Hugo Site</description>
+    <title>Mi Portafolio</title>
+    <link>https://aliciagilmatute.github.io/</link>
+    <description>Recent content on Mi Portafolio</description>
     <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate></lastBuildDate>
-    <atom:link href="https://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <language>es</language>
+    <atom:link href="https://aliciagilmatute.github.io/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
