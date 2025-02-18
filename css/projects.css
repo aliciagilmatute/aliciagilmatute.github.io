@@ -63,3 +63,11 @@
     box-shadow: none !important;
 }
 
+#projects .card-body .project-image {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin: 10px auto;
+    border-radius: 0.5rem;
+}
