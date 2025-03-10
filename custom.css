@@ -1,5 +1,6 @@
 img {
-    max-width: 100%;
-    height: auto;
-    display: block;
+    max-width: 60% !important;
+    margin-left: 20% !important;
+    height: auto !important;
+    display: block !important;
   }
