@@ -6,6 +6,35 @@
     <description>Recent content in Tags on Alicia Gil Matute</description>
     <generator>Hugo</generator>
     <language>es</language>
+    <lastBuildDate>Fri, 25 Apr 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ciencia Y Politica</title>
+      <link>http://localhost:1313/tags/ciencia-y-politica/</link>
+      <pubDate>Fri, 25 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/ciencia-y-politica/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Correlacion Y Causalidad</title>
+      <link>http://localhost:1313/tags/correlacion-y-causalidad/</link>
+      <pubDate>Fri, 25 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/correlacion-y-causalidad/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Estadística</title>
+      <link>http://localhost:1313/tags/estad%C3%ADstica/</link>
+      <pubDate>Fri, 25 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/estad%C3%ADstica/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Vacunas Y Autismo</title>
+      <link>http://localhost:1313/tags/vacunas-y-autismo/</link>
+      <pubDate>Fri, 25 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/vacunas-y-autismo/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>
