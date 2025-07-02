@@ -33,5 +33,9 @@
     <lastmod>2024-12-12T17:49:00+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
+  </url><url>
+    <loc>http://localhost:1313/proyectos/</loc>
+  </url><url>
+    <loc>http://localhost:1313/proyectos/valores_perdidos/</loc>
   </url>
 </urlset>
