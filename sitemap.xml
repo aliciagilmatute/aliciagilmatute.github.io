@@ -35,7 +35,5 @@
     <loc>http://localhost:1313/categories/</loc>
   </url><url>
     <loc>http://localhost:1313/proyectos/</loc>
-  </url><url>
-    <loc>http://localhost:1313/proyectos/valores_perdidos/</loc>
   </url>
 </urlset>
