@@ -142,6 +142,7 @@ Tags | Alicia Gil Matute
 
 
 
+
 <script>
     var prevScrollPos = window.pageYOffset;
     window.addEventListener("scroll", function showHeaderOnScroll() {
@@ -173,12 +174,19 @@ Tags | Alicia Gil Matute
             
             <a class="navbar-brand primary-font text-wrap" href="/">
                 
-                <img src="/normal_fav_icon.png" width="30" height="30"
-                    class="d-inline-block align-top">
-                Alicia Gil Matute
+                
+                
+                    <img src="/normal_fav_icon.png" width="30" height="30" class="d-inline-block align-top">
+                    Alicia Gil Matute
                 
             </a>
 
+            
+                <div>
+                    <input id="search" autocomplete="off" class="form-control mr-sm-2 d-none d-md-block" 
+                        placeholder='Search'
+                        aria-label="Search" oninput="searchOnChange(event)">
+                </div>
             
 
             
@@ -193,55 +201,71 @@ Tags | Alicia Gil Matute
             <div class="collapse navbar-collapse text-wrap primary-font" id="navbarContent">
                 <ul class="navbar-nav ms-auto text-center">
                     
+                        <li class="nav-item navbar-text d-block d-md-none">
+                            <div class="nav-link">
+                                <input id="search" autocomplete="off" class="form-control mr-sm-2" 
+                                    placeholder='Search' 
+                                    aria-label="Search" oninput="searchOnChange(event)">
+                            </div>
+                        </li>
+                    
 
                     
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    
+                    
                     <li class="nav-item navbar-text">
-                        <a class="nav-link" href="/#about" aria-label="about">
+                        <a class="nav-link" href="/#about" title="">
+                            
                             Sobre mí
                         </a>
                     </li>
                     
-
+                    
+                    
                     
                     <li class="nav-item navbar-text">
-                        <a class="nav-link" href="/#experience"
-                            aria-label="experience">
-                            Experiencia
-                        </a>
-                    </li>
-                    
-
-                    
-                    <li class="nav-item navbar-text">
-                        <a class="nav-link" href="/#education"
-                            aria-label="education">
-                            CV
-                        </a>
-                    </li>
-                    
-
-                    
-                    <li class="nav-item navbar-text">
-                        <a class="nav-link" href="/#projects"
-                            aria-label="projects">
+                        <a class="nav-link" href="/proyectos" title="Mis proyectos">
+                            
                             Proyectos
                         </a>
                     </li>
                     
-
                     
-
+                    
                     
                     <li class="nav-item navbar-text">
-                        <a class="nav-link" href="/#contact"
-                            aria-label="contact">
-                            Contáctame
+                        <a class="nav-link" href="/#experience" title="">
+                            
+                            Experiencia
                         </a>
                     </li>
                     
-
                     
-
+                    
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/#education" title="">
+                            
+                            CV
+                        </a>
+                    </li>
                     
                     
                     
@@ -250,6 +274,16 @@ Tags | Alicia Gil Matute
                         <a class="nav-link" href="/blog" title="Blog posts">
                             
                             Blog
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/recursos" title="Recursos de psicología y metodología">
+                            
+                            Recursos
                         </a>
                     </li>
                     
@@ -267,9 +301,9 @@ Tags | Alicia Gil Matute
                     
                     
                     <li class="nav-item navbar-text">
-                        <a class="nav-link" href="/recursos" title="Recursos de psicología y metodología">
+                        <a class="nav-link" href="/#contact" title="">
                             
-                            Recursos
+                            Contáctame
                         </a>
                     </li>
                     
@@ -300,7 +334,6 @@ Tags | Alicia Gil Matute
                     
 
                 </ul>
-
             </div>
         </div>
     </nav>
@@ -513,6 +546,8 @@ Tags | Alicia Gil Matute
 
 </script>
 
+
+    <script src="/js/search.js"></script>
 
 
 

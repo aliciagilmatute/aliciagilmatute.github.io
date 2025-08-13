@@ -15,19 +15,5 @@
       <guid>http://localhost:1313/blog/tocino_y_velocidad/</guid>
       <description>&lt;p&gt;Mi timeline de Twitter (me niego a llamarlo X) es tan diversa que nada de lo humano le es ajeno, pero podría decirse que, en su mayoría, me muestra cuentas y perfiles relacionados con la estadística y la investigación científica. Hace unos días me encontré con el siguiente post:&#xA;&lt;br&gt;&lt;br&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://x.com/JesslovesMJK/status/1913104932552442287&#34;&gt;&lt;img src=&#34;http://localhost:1313/grafico.png&#34; alt=&#34;Tweet de Jessica Rose&#34;&gt;&lt;/a&gt;&#xA;&lt;br&gt;&lt;br&gt;&lt;/p&gt;&#xA;&lt;p&gt;Cualquiera que esté crónicamente en internet como yo, sabe que si un tweet recibe tantas interacciones es que algo pasa. Y normalmente, ese “algo” tiene que ver con polémica. Quien esté familiarizado con la creación e interpretación de gráficos probablemente haya notado otra cosa en primer lugar: ese número enorme en la imagen mostrando una correlación altísima (R = 0.9021).&lt;/p&gt;</description>
     </item>
-    <item>
-      <title>Recursos</title>
-      <link>http://localhost:1313/recursos/recursos/</link>
-      <pubDate>Sun, 15 Dec 2024 20:05:55 +0100</pubDate>
-      <guid>http://localhost:1313/recursos/recursos/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Albúm</title>
-      <link>http://localhost:1313/fotos/album/</link>
-      <pubDate>Thu, 12 Dec 2024 17:49:00 +0100</pubDate>
-      <guid>http://localhost:1313/fotos/album/</guid>
-      <description></description>
-    </item>
   </channel>
 </rss>
