@@ -7,5 +7,19 @@
     <generator>Hugo</generator>
     <language>es</language>
     <atom:link href="http://localhost:1313/proyectos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Análisis Multinivel Bayesiano</title>
+      <link>http://localhost:1313/proyectos/analisis_multinivel/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/proyectos/analisis_multinivel/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Machine Learning (Supervised)</title>
+      <link>http://localhost:1313/proyectos/ml_supervised/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/proyectos/ml_supervised/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

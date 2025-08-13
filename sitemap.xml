@@ -32,7 +32,11 @@
     <loc>http://localhost:1313/fotos/</loc>
     <lastmod>2024-12-12T17:49:00+01:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/proyectos/analisis_multinivel/</loc>
+  </url><url>
     <loc>http://localhost:1313/categories/</loc>
+  </url><url>
+    <loc>http://localhost:1313/proyectos/ml_supervised/</loc>
   </url><url>
     <loc>http://localhost:1313/proyectos/</loc>
   </url>
