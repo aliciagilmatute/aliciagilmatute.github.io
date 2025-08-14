@@ -16,6 +16,20 @@
       <description>&lt;p&gt;Mi timeline de Twitter (me niego a llamarlo X) es tan diversa que nada de lo humano le es ajeno, pero podría decirse que, en su mayoría, me muestra cuentas y perfiles relacionados con la estadística y la investigación científica. Hace unos días me encontré con el siguiente post:&#xA;&lt;br&gt;&lt;br&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://x.com/JesslovesMJK/status/1913104932552442287&#34;&gt;&lt;img src=&#34;http://localhost:1313/grafico.png&#34; alt=&#34;Tweet de Jessica Rose&#34;&gt;&lt;/a&gt;&#xA;&lt;br&gt;&lt;br&gt;&lt;/p&gt;&#xA;&lt;p&gt;Cualquiera que esté crónicamente en internet como yo, sabe que si un tweet recibe tantas interacciones es que algo pasa. Y normalmente, ese “algo” tiene que ver con polémica. Quien esté familiarizado con la creación e interpretación de gráficos probablemente haya notado otra cosa en primer lugar: ese número enorme en la imagen mostrando una correlación altísima (R = 0.9021).&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Algoritmo Genético</title>
+      <link>http://localhost:1313/proyectos/algoritmo_genetico/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/proyectos/algoritmo_genetico/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Análisis Fuga de Empleados</title>
+      <link>http://localhost:1313/proyectos/fuga_empleados/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/proyectos/fuga_empleados/</guid>
+      <description>&lt;!-- Botones al repositorio de GitHub y Kaggle --&gt;&#xD;&#xA;&lt;p style=&#34;text-align: center; margin-bottom: 2rem;&#34;&gt;&#xD;&#xA;  &lt;a href=&#34;https://github.com/tu_usuario/tu_repositorio&#34; target=&#34;_blank&#34; class=&#34;btn-project&#34; style=&#34;margin-right:1rem;&#34;&gt;&#xD;&#xA;    Repositorio en GitHub&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;  &lt;a href=&#34;https://www.kaggle.com/code/arrobarsandias/an-lisis-fuga-empleados&#34; target=&#34;_blank&#34; class=&#34;btn-project&#34;&gt;&#xD;&#xA;    Repositorio en Kaggle&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/p&gt;&#xD;&#xA;&lt;!-- # Emulación de una semana de trabajo en DataScientist --&gt;&#xD;&#xA;&lt;p&gt;&lt;br&gt;&lt;br&gt;&#xA;El gran objetivo del proyecto en el que vas a trabajar es reducir la fuga de empleados de la empresa.&#xA;El principal problema es la rotación de empleados. Deberás trabajar en un sistema que consiga reducir la fuga de empleados.&#xA;&lt;br&gt;&lt;br&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Análisis Multinivel Bayesiano</title>
       <link>http://localhost:1313/proyectos/analisis_multinivel/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -23,10 +37,38 @@
       <description></description>
     </item>
     <item>
-      <title>Machine Learning (Supervised)</title>
+      <title>Estudio de Valores Perdidos en R</title>
+      <link>http://localhost:1313/proyectos/valores_perdidos/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/proyectos/valores_perdidos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Machine Learning No Supervisado</title>
+      <link>http://localhost:1313/proyectos/ml_unsupervised/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/proyectos/ml_unsupervised/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Machine Learning Supervisado</title>
       <link>http://localhost:1313/proyectos/ml_supervised/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/proyectos/ml_supervised/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Procesamiento de Lenguaje Natural</title>
+      <link>http://localhost:1313/proyectos/nlp_reviews/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/proyectos/nlp_reviews/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Simulación Estadística</title>
+      <link>http://localhost:1313/proyectos/simulacion/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/proyectos/simulacion/</guid>
       <description></description>
     </item>
   </channel>

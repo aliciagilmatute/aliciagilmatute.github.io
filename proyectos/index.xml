@@ -8,6 +8,20 @@
     <language>es</language>
     <atom:link href="http://localhost:1313/proyectos/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Algoritmo Genético</title>
+      <link>http://localhost:1313/proyectos/algoritmo_genetico/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/proyectos/algoritmo_genetico/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Análisis Fuga de Empleados</title>
+      <link>http://localhost:1313/proyectos/fuga_empleados/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/proyectos/fuga_empleados/</guid>
+      <description>&lt;!-- Botones al repositorio de GitHub y Kaggle --&gt;&#xD;&#xA;&lt;p style=&#34;text-align: center; margin-bottom: 2rem;&#34;&gt;&#xD;&#xA;  &lt;a href=&#34;https://github.com/tu_usuario/tu_repositorio&#34; target=&#34;_blank&#34; class=&#34;btn-project&#34; style=&#34;margin-right:1rem;&#34;&gt;&#xD;&#xA;    Repositorio en GitHub&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;  &lt;a href=&#34;https://www.kaggle.com/code/arrobarsandias/an-lisis-fuga-empleados&#34; target=&#34;_blank&#34; class=&#34;btn-project&#34;&gt;&#xD;&#xA;    Repositorio en Kaggle&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/p&gt;&#xD;&#xA;&lt;!-- # Emulación de una semana de trabajo en DataScientist --&gt;&#xD;&#xA;&lt;p&gt;&lt;br&gt;&lt;br&gt;&#xA;El gran objetivo del proyecto en el que vas a trabajar es reducir la fuga de empleados de la empresa.&#xA;El principal problema es la rotación de empleados. Deberás trabajar en un sistema que consiga reducir la fuga de empleados.&#xA;&lt;br&gt;&lt;br&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Análisis Multinivel Bayesiano</title>
       <link>http://localhost:1313/proyectos/analisis_multinivel/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -15,10 +29,38 @@
       <description></description>
     </item>
     <item>
-      <title>Machine Learning (Supervised)</title>
+      <title>Estudio de Valores Perdidos en R</title>
+      <link>http://localhost:1313/proyectos/valores_perdidos/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/proyectos/valores_perdidos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Machine Learning No Supervisado</title>
+      <link>http://localhost:1313/proyectos/ml_unsupervised/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/proyectos/ml_unsupervised/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Machine Learning Supervisado</title>
       <link>http://localhost:1313/proyectos/ml_supervised/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/proyectos/ml_supervised/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Procesamiento de Lenguaje Natural</title>
+      <link>http://localhost:1313/proyectos/nlp_reviews/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/proyectos/nlp_reviews/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Simulación Estadística</title>
+      <link>http://localhost:1313/proyectos/simulacion/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/proyectos/simulacion/</guid>
       <description></description>
     </item>
   </channel>
