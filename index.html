@@ -48,9 +48,6 @@
 
 <link rel="stylesheet" href="/css/theme.css" media="all">
 
-<link rel="stylesheet" href="/css/index.css" media="all">
-<link rel="stylesheet" href="/css/projects.css" media="all">
-
 <style>
     :root {
         --text-color: #343a40;
@@ -891,7 +888,7 @@ Un máster que me ha permitido descubir e interesarme por temas que desbordan el
               <p class="card-text">Este estudio explora el análisis multinivel desde un enfoque bayesiano para evaluar la variabilidad …</p>
             </div>
             <div class="mt-3">
-              <a href="/proyectos#R" class="contact-btn btn-lg">
+              <a href="/proyectos#R" class="btn-contact btn-md">
                 Proyectos en R
               </a>
             </div>
@@ -913,7 +910,7 @@ Un máster que me ha permitido descubir e interesarme por temas que desbordan el
 </p>
             </div>
             <div class="mt-3">
-              <a href="/proyectos#Python" class="contact-btn btn-lg">
+              <a href="/proyectos#Python" class="btn-contact btn-md">
                 Proyectos en Python
               </a>
             </div>
@@ -935,7 +932,7 @@ Un máster que me ha permitido descubir e interesarme por temas que desbordan el
 </p>
             </div>
             <div class="mt-3">
-              <a href="/proyectos#estrategicos" class="contact-btn btn-lg">
+              <a href="/proyectos#estrategicos" class="btn-contact btn-md">
                 Proyectos Estratégicos
               </a>
             </div>
@@ -948,12 +945,38 @@ Un máster que me ha permitido descubir e interesarme por temas que desbordan el
     
     <div class="row justify-content-center">
       <div class="col-auto mt-4">
-        <a href="/proyectos/" class="contact-btn btn-lg">
+        <a href="/proyectos/" class="btn-contact btn-lg">
           Ver todos
         </a>
       </div>
     </div>
   </div>
+
+  
+  <style>
+     
+    .btn-contact {
+      transition: none;
+      transition: opacity 0.3s;
+      border-radius: .5rem !important;
+      border: 1px solid var(--primary-color) !important;
+      background-color: var(--secondary-color) !important;
+      color: var(--text-color) !important;
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .btn-contact:hover {
+      opacity: 0.7;
+    }
+
+    .btn-contact:focus {
+      box-shadow: none !important;
+      outline: none;
+    }
+  </style>
 </section>
 
 

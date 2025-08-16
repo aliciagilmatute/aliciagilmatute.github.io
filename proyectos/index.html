@@ -47,9 +47,6 @@
 
 <link rel="stylesheet" href="/css/theme.css" media="all">
 
-<link rel="stylesheet" href="/css/index.css" media="all">
-<link rel="stylesheet" href="/css/projects.css" media="all">
-
 <style>
     :root {
         --text-color: #343a40;
@@ -149,9 +146,6 @@
 
 
 <link rel="stylesheet" href="/css/theme.css" media="all">
-
-<link rel="stylesheet" href="/css/index.css" media="all">
-<link rel="stylesheet" href="/css/projects.css" media="all">
 
 <style>
     :root {
@@ -467,7 +461,31 @@
     .badge-tech    { background-color: #d8b4fe; color: #1d3557; }  
     .badge-tool    { background-color: #ffb49a; color: #1d3557; }  
     .badge-general { background-color: #fff3b0; color: #1d3557; }  
+    
+      
+    .btn-contact {
+      transition: none;
+      transition: opacity 0.3s;
+      border-radius: .5rem !important;
+      border: 1px solid var(--primary-color) !important;
+      background-color: var(--secondary-color) !important;
+      color: var(--text-color) !important;
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .btn-contact:hover {
+      opacity: 0.7;
+    }
+
+    .btn-contact:focus {
+      box-shadow: none !important;
+      outline: none;
+    }
   </style>
+
 </head>
 <body class="light">
 
@@ -475,6 +493,11 @@
     <h1 class="mb-4 text-center">Proyectos</h1>
     <div id="projects-container"></div>
   </main>
+
+    
+  <div class="text-center mt-4">
+    <a href="/#about" class="btn-contact">Volver a Inicio</a>
+  </div>
 
   <footer class="py-4 text-center">
     <p>&copy; 2025 Alicia Gil Matute</p>
@@ -589,6 +612,7 @@
   </script>
 </body>
 </html>
+
 
 
   </div><footer>
