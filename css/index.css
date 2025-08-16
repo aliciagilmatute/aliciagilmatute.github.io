@@ -518,6 +518,29 @@ header .navbar.animate {
     border-radius: 0.7rem;
 }
 
+/* al final de main.scss */
+#projects a.contact-btn,
+#projects a.btn-lg {
+    border-radius: .5rem;
+    border: 1px solid var(--primary-color);
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+#projects a.contact-btn:hover,
+#projects a.btn-lg:hover {
+    opacity: .7;
+}
+
+#projects a.contact-btn:focus,
+#projects a.btn-lg:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+
 /* contact */
 
 #contact h3 {

@@ -48,6 +48,9 @@
 
 <link rel="stylesheet" href="/css/theme.css" media="all">
 
+<link rel="stylesheet" href="/css/index.css" media="all">
+<link rel="stylesheet" href="/css/projects.css" media="all">
+
 <style>
     :root {
         --text-color: #343a40;
@@ -475,6 +478,19 @@
     body.dark .materiales-botones svg {
       fill: var(--background-color-dark);
     }
+
+     
+    .toc-container {
+      text-align: left;
+      margin: 2rem 0;
+    }
+    .toc-container h2 {
+      margin-bottom: 1rem;
+    }
+    .toc-container nav {
+      border-left: 3px solid var(--primary-color);
+      padding-left: 1rem;
+    }
   </style>
 
   
@@ -503,6 +519,7 @@
       
     </div>
   </div>
+
 
   
   <div class="project-content">
@@ -541,23 +558,23 @@
 
 </main>
 
-  <footer class="py-4 text-center">
-    <p>&copy; 2025 Alicia Gil Matute</p>
-  </footer>
+<footer class="py-4 text-center">
+  <p>&copy; 2025 Alicia Gil Matute</p>
+</footer>
 
-  <script src="/bootstrap-5/js/bootstrap.bundle.min.js"></script>
-  <script>
-    const toggleBtn = document.getElementById('theme-toggle');
-    const body = document.body;
-    const moonIcon = document.getElementById('moon');
-    const sunIcon = document.getElementById('sun');
-    toggleBtn?.addEventListener('click', () => {
-      body.classList.toggle('dark');
-      moonIcon.style.display = body.classList.contains('dark') ? 'none' : 'inline-block';
-      sunIcon.style.display = body.classList.contains('dark') ? 'inline-block' : 'none';
-      localStorage.setItem("pref-theme", body.classList.contains('dark') ? "dark" : "light");
-    });
-  </script>
+<script src="/bootstrap-5/js/bootstrap.bundle.min.js"></script>
+<script>
+  const toggleBtn = document.getElementById('theme-toggle');
+  const body = document.body;
+  const moonIcon = document.getElementById('moon');
+  const sunIcon = document.getElementById('sun');
+  toggleBtn?.addEventListener('click', () => {
+    body.classList.toggle('dark');
+    moonIcon.style.display = body.classList.contains('dark') ? 'none' : 'inline-block';
+    sunIcon.style.display = body.classList.contains('dark') ? 'inline-block' : 'none';
+    localStorage.setItem("pref-theme", body.classList.contains('dark') ? "dark" : "light");
+  });
+</script>
 </body>
 </html>
 

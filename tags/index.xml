@@ -36,19 +36,5 @@
       <guid>http://localhost:1313/tags/vacunas-y-autismo/</guid>
       <description></description>
     </item>
-    <item>
-      <title>Experiencias</title>
-      <link>http://localhost:1313/tags/experiencias/</link>
-      <pubDate>Thu, 12 Dec 2024 17:49:00 +0100</pubDate>
-      <guid>http://localhost:1313/tags/experiencias/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Fotos</title>
-      <link>http://localhost:1313/tags/fotos/</link>
-      <pubDate>Thu, 12 Dec 2024 17:49:00 +0100</pubDate>
-      <guid>http://localhost:1313/tags/fotos/</guid>
-      <description></description>
-    </item>
   </channel>
 </rss>
