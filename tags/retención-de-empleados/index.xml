@@ -1,75 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Alicia Gil Matute</title>
-    <link>http://localhost:1313/</link>
-    <description>Recent content on Alicia Gil Matute</description>
+    <title>Retención De Empleados on Alicia Gil Matute</title>
+    <link>http://localhost:1313/tags/retenci%C3%B3n-de-empleados/</link>
+    <description>Recent content in Retención De Empleados on Alicia Gil Matute</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Thu, 21 Aug 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/retenci%C3%B3n-de-empleados/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Análisis Fuga de Empleados</title>
       <link>http://localhost:1313/proyectos/fuga_empleados/</link>
       <pubDate>Thu, 21 Aug 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/proyectos/fuga_empleados/</guid>
       <description>&lt;!-- # Emulación de una semana de trabajo en DataScientist --&gt;&#xD;&#xA;&lt;p&gt;&lt;br&gt;&lt;br&gt;&#xA;El gran objetivo del proyecto en el que vas a trabajar es reducir la fuga de empleados de la empresa.&#xA;El principal problema es la rotación de empleados. Deberás trabajar en un sistema que consiga reducir la fuga de empleados.&#xA;&lt;br&gt;&lt;br&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;objetivosbr&#34;&gt;Objetivos&lt;br&gt;&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Entender y cuantificar el problema desde el punto de vista de negocio&lt;/li&gt;&#xA;&lt;li&gt;Desarrollar un sistema automatizado de machine learning que identifique a los empleados que están en mayor riesgo de fuga&lt;/li&gt;&#xA;&lt;li&gt;Comunicar los resultados de forma exitosa a la dirección&#xA;&lt;br&gt;&lt;br&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;fasesbr&#34;&gt;Fases&lt;br&gt;&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Business Analytics&lt;/strong&gt;: entender y cuantificar el problema&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Machine Learning&lt;/strong&gt;: desarrollar un modelo predictivo&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Productivización&lt;/strong&gt;: generar un cuadro de mando&#xA;&lt;br&gt;&lt;br&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;carga-de-librerías-y-dataset&#34;&gt;Carga de librerías y dataset&lt;/h2&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; numpy &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; np&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; pandas &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; pd &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; matplotlib.pyplot &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; plt&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; os&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ruta &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; os&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;path&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;join(os&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;getcwd())&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; pd&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;read_csv(ruta &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;r&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;/data/AbandonoEmpleados.csv&amp;#39;&lt;/span&gt;, sep&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;;&amp;#39;&lt;/span&gt;, na_values&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;#N/D&amp;#39;&lt;/span&gt;)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;head()&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;info()&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;análisis-de-nulos&#34;&gt;Análisis de nulos&lt;/h2&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;isnull()&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sum()&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sort_values(ascending&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;False&lt;/span&gt;)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Conclusiones:&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Y YA VAN 4854897589492 ESTUDIOS CIENTÍFICOS QUE NO DEMUESTRAN NADA SOBRE EL TOCINO Y LA VELOCIDAD 🎶🎶</title>
-      <link>http://localhost:1313/blog/tocino_y_velocidad/</link>
-      <pubDate>Fri, 25 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/tocino_y_velocidad/</guid>
-      <description>&lt;p&gt;Mi timeline de Twitter (me niego a llamarlo X) es tan diversa que nada de lo humano le es ajeno, pero podría decirse que, en su mayoría, me muestra cuentas y perfiles relacionados con la estadística y la investigación científica. Hace unos días me encontré con el siguiente post:&#xA;&lt;br&gt;&lt;br&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://x.com/JesslovesMJK/status/1913104932552442287&#34;&gt;&lt;img src=&#34;http://localhost:1313/grafico.png&#34; alt=&#34;Tweet de Jessica Rose&#34;&gt;&lt;/a&gt;&#xA;&lt;br&gt;&lt;br&gt;&lt;/p&gt;&#xA;&lt;p&gt;Cualquiera que esté crónicamente en internet como yo, sabe que si un tweet recibe tantas interacciones es que algo pasa. Y normalmente, ese “algo” tiene que ver con polémica. Quien esté familiarizado con la creación e interpretación de gráficos probablemente haya notado otra cosa en primer lugar: ese número enorme en la imagen mostrando una correlación altísima (R = 0.9021).&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Algoritmo Genético</title>
-      <link>http://localhost:1313/proyectos/algoritmo_genetico/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/proyectos/algoritmo_genetico/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Análisis Multinivel Bayesiano</title>
-      <link>http://localhost:1313/proyectos/analisis_multinivel/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/proyectos/analisis_multinivel/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Estudio de Valores Perdidos en R</title>
-      <link>http://localhost:1313/proyectos/valores_perdidos/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/proyectos/valores_perdidos/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Machine Learning No Supervisado</title>
-      <link>http://localhost:1313/proyectos/ml_unsupervised/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/proyectos/ml_unsupervised/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Machine Learning Supervisado</title>
-      <link>http://localhost:1313/proyectos/ml_supervised/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/proyectos/ml_supervised/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Procesamiento de Lenguaje Natural</title>
-      <link>http://localhost:1313/proyectos/nlp_reviews/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/proyectos/nlp_reviews/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Simulación Estadística</title>
-      <link>http://localhost:1313/proyectos/simulacion/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/proyectos/simulacion/</guid>
-      <description></description>
     </item>
   </channel>
 </rss>

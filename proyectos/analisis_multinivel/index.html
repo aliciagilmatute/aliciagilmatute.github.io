@@ -123,99 +123,74 @@
     text-decoration: none;
     font-weight: 500;
   }
-
-  .btn-contact:hover {
-    opacity: 0.7;
-  }
-
-  .btn-contact:focus {
-    box-shadow: none !important;
-    outline: none;
-  }
-
-       
-    .copy-btn {
-      font-family: "Inter", Arial, sans-serif;
-      position: absolute;
-      top: 0.5rem;
-      right: 0.5rem;
-      padding: 0.025rem 0.6rem;
-      font-size: 0.75rem;
-      border-radius: 0.5rem;
-      background-color: var(--primary-color);
-      color: white;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      cursor: pointer;
-      transition: background-color 0.2s;
-    }
-    .copy-btn:hover {
-      background-color: #0056b3;
-    }
-    body.dark .copy-btn {
-      background-color: rgba(255,255,255,0.05);
-      color: white;
-    }
-    body.dark .copy-btn:hover {
-      background-color: #ccc;
-    }
-
-    .code-container {
-      position: relative;
-    }
-    .code-container pre {
-      padding: 1.5rem;
-      overflow: auto;
-      border-radius: 0.5rem;
-      background-color: rgba(255,255,255,0.05);
-      position: relative;
-    }
-
-       
-    .materiales {
-      text-align: left;
-      margin: 2rem 0 1rem;
-      font-size: 1rem;
-      color: var(--text-color);
-    }
-    .materiales strong {
-      display: block;
-      margin-bottom: 0.75rem;
-    }
-    .materiales-botones {
-      display: flex;
-      gap: 0.75rem;
-    }
-    .materiales-botones a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 48px;
-      height: 48px;
-      background-color: var(--primary-color);
-      border-radius: 0.5rem;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.15);
-      transition: background-color 0.2s ease, transform 0.1s ease;
-    }
-    .materiales-botones a:hover {
-      background-color: #0056b3;
-      transform: translateY(-2px);
-    }
-    .materiales-botones svg {
-      width: 24px;
-      height: 24px;
-      fill: white;
-    }
-    body.dark .materiales-botones a {
-      background-color: var(--primary-color-dark);
-    }
-    body.dark .materiales-botones a:hover {
-      background-color: #ccc;
-    }
-    body.dark .materiales-botones svg {
-      fill: var(--background-color-dark);
-    }
+  .btn-contact:hover { opacity: 0.7; }
+  .btn-contact:focus { box-shadow: none !important; outline: none; }
 
    
+  .copy-btn {
+    font-family: "Inter", Arial, sans-serif;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.025rem 0.6rem;
+    font-size: 0.75rem;
+    border-radius: 0.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  .copy-btn:hover { background-color: #0056b3; }
+  body.dark .copy-btn { background-color: rgba(255,255,255,0.05); color: white; }
+  body.dark .copy-btn:hover { background-color: #ccc; }
+
+  .code-container { position: relative; }
+  .code-container pre {
+    padding: 1.5rem;
+    overflow: auto;
+    border-radius: 0.5rem;
+    background-color: rgba(255,255,255,0.05);
+    position: relative;
+  }
+
+   
+  .materiales { text-align: left; margin: 2rem 0 1rem; font-size: 1rem; color: var(--text-color); }
+  .materiales strong { display: block; margin-bottom: 0.75rem; }
+  .materiales-botones { display: flex; gap: 0.75rem; }
+  .materiales-botones a {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 48px; height: 48px;
+    background-color: var(--primary-color);
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+    transition: background-color 0.2s ease, transform 0.1s ease;
+  }
+  .materiales-botones a:hover { background-color: #0056b3; transform: translateY(-2px); }
+  .materiales-botones svg { width: 24px; height: 24px; fill: white; }
+  body.dark .materiales-botones a { background-color: var(--primary-color-dark); }
+  body.dark .materiales-botones a:hover { background-color: #ccc; }
+  body.dark .materiales-botones svg { fill: var(--background-color-dark); }
+
+   
+  .tableau-section { text-align: center; margin: 3rem 0; }
+  .tableau-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 65%;  
+    height: 0;
+    overflow: hidden;
+    border-radius: none;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  }
+  .tableau-container iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 150%; height: 150%;
+    transform: scale(0.75);  
+    transform-origin: top left;
+    border: none;
+  }
 </style>
 
 
@@ -453,11 +428,8 @@ Análisis Multinivel Bayesiano | Alicia Gil Matute
             <div class="text-center">
               
               Jan 1, 0001
-
               
-              <span id="readingTime">
-                min read
-              </span>
+              <span id="readingTime">min read</span>
               
             </div>
           </div>
@@ -507,6 +479,9 @@ Análisis Multinivel Bayesiano | Alicia Gil Matute
           </article>
 
           
+          
+
+          
           <div class="text-center mt-4">
             <a href="/proyectos" class="btn-contact">Volver a Proyectos</a>
           </div>
@@ -518,12 +493,8 @@ Análisis Multinivel Bayesiano | Alicia Gil Matute
         <div id="stickySideBar" class="sticky-sidebar">
           
           <aside class="toc">
-              <h5>
-                Table Of Contents
-              </h5>
-              <div class="toc-content">
-                <nav id="TableOfContents"></nav>
-              </div>
+              <h5>Table Of Contents</h5>
+              <div class="toc-content"><nav id="TableOfContents"></nav></div>
           </aside>
           
 
@@ -534,26 +505,10 @@ Análisis Multinivel Bayesiano | Alicia Gil Matute
             <h5>Social</h5>
             <div class="social-content">
               <ul class="list-inline">
-                <li class="list-inline-item text-center">
-                  <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2flocalhost%3a1313%2fproyectos%2fanalisis_multinivel%2f">
-                    <i class="fab fa-linkedin"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item text-center">
-                  <a target="_blank" href="https://twitter.com/share?text=An%c3%a1lisis%20Multinivel%20Bayesiano&url=http%3a%2f%2flocalhost%3a1313%2fproyectos%2fanalisis_multinivel%2f">
-                    <i class="fab fa-twitter"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item text-center">
-                  <a target="_blank" href="https://api.whatsapp.com/send?text=An%c3%a1lisis%20Multinivel%20Bayesiano: http%3a%2f%2flocalhost%3a1313%2fproyectos%2fanalisis_multinivel%2f">
-                    <i class="fab fa-whatsapp"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item text-center">
-                  <a target="_blank" href='mailto:?subject=An%c3%a1lisis%20Multinivel%20Bayesiano&amp;body=Check%20out%20this%20site http%3a%2f%2flocalhost%3a1313%2fproyectos%2fanalisis_multinivel%2f'>
-                    <i class="fa fa-envelope"></i>
-                  </a>
-                </li>
+                <li class="list-inline-item text-center"><a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2flocalhost%3a1313%2fproyectos%2fanalisis_multinivel%2f"><i class="fab fa-linkedin"></i></a></li>
+                <li class="list-inline-item text-center"><a target="_blank" href="https://twitter.com/share?text=An%c3%a1lisis%20Multinivel%20Bayesiano&url=http%3a%2f%2flocalhost%3a1313%2fproyectos%2fanalisis_multinivel%2f"><i class="fab fa-twitter"></i></a></li>
+                <li class="list-inline-item text-center"><a target="_blank" href="https://api.whatsapp.com/send?text=An%c3%a1lisis%20Multinivel%20Bayesiano: http%3a%2f%2flocalhost%3a1313%2fproyectos%2fanalisis_multinivel%2f"><i class="fab fa-whatsapp"></i></a></li>
+                <li class="list-inline-item text-center"><a target="_blank" href='mailto:?subject=An%c3%a1lisis%20Multinivel%20Bayesiano&amp;body=Check%20out%20this%20site http%3a%2f%2flocalhost%3a1313%2fproyectos%2fanalisis_multinivel%2f'><i class="fa fa-envelope"></i></a></li>
               </ul>
             </div>
           </aside>
@@ -562,18 +517,13 @@ Análisis Multinivel Bayesiano | Alicia Gil Matute
       </div>
     </div>
 
-
   
-  <button class="p-2 px-3" onclick="topFunction()" id="topScroll">
-    <i class="fas fa-angle-up"></i>
-  </button>
+  <button class="p-2 px-3" onclick="topFunction()" id="topScroll"><i class="fas fa-angle-up"></i></button>
 </section>
 
 
 
-<div class="progress">
-  <div id="scroll-progress-bar" class="progress-bar" role="progressbar"></div>
-</div>
+<div class="progress"><div id="scroll-progress-bar" class="progress-bar" role="progressbar"></div></div>
 <script src="/js/scrollProgressBar.js"></script>
 
 
@@ -581,19 +531,11 @@ Análisis Multinivel Bayesiano | Alicia Gil Matute
 <script>
   var topScroll = document.getElementById("topScroll");
   window.onscroll = function() {scrollFunction()};
-
   function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-      topScroll.style.display = "block";
-    } else {
-      topScroll.style.display = "none";
-    }
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) { topScroll.style.display = "block"; }
+    else { topScroll.style.display = "none"; }
   }
-
-  function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-  }
+  function topFunction() { document.body.scrollTop = 0; document.documentElement.scrollTop = 0; }
 
   
   let stickySideBarElem = document.getElementById("stickySideBar");
@@ -604,7 +546,7 @@ Análisis Multinivel Bayesiano | Alicia Gil Matute
     stickySideBarElem.style.top = headerHeight + "px";
   } else {
     stickySideBarElem.style.top = "50px";
-  } 
+  }
 </script>
 
 
@@ -621,17 +563,13 @@ Análisis Multinivel Bayesiano | Alicia Gil Matute
       container.classList.add("code-container");
       pre.parentNode.insertBefore(container, pre);
       container.appendChild(pre);
-
       const button = document.createElement("button");
-      button.className = "copy-btn";
-      button.textContent = "Copy";
+      button.className = "copy-btn"; button.textContent = "Copy";
       button.addEventListener("click", () => {
         navigator.clipboard.writeText(codeBlock.innerText).then(() => {
-          button.textContent = "Copied!";
-          setTimeout(() => (button.textContent = "Copy"), 2000);
+          button.textContent = "Copied!"; setTimeout(() => (button.textContent = "Copy"), 2000);
         });
       });
-
       container.appendChild(button);
     });
   });
