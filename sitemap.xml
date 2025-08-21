@@ -35,6 +35,18 @@
     <loc>http://localhost:1313/recursos/</loc>
     <lastmod>2024-12-15T20:05:55+01:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/recursos/recursos/</loc>
+    <lastmod>2024-12-15T20:05:55+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/fotos/album/</loc>
+    <lastmod>2024-12-12T17:49:00+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/experiencias/</loc>
+    <lastmod>2024-12-12T17:49:00+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/fotos/</loc>
+    <lastmod>2024-12-12T17:49:00+01:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/fotos/</loc>
     <lastmod>2024-12-12T17:49:00+01:00</lastmod>
   </url><url>
