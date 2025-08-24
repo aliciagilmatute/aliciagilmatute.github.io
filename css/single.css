@@ -6,7 +6,7 @@
 
 #single .title > h1 {
     opacity: 0.8;
-    color: #FFFFFF;
+    color: #FFFFFF !important;
 }
 
 #single .title small {
