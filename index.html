@@ -709,7 +709,7 @@ Alicia Gil Matute
             
             <div class="col-sm-12 col-md-8 col-lg-4 mb-5 mb-sm-0 mb-md-5 mb-lg-0 d-none d-sm-none d-md-block">
                 <div class="image d-flex px-5">
-                    <img src="/photo_me.jpg" class="img-thumbnail mx-auto rounded-circle" alt="">
+                    <img src="/photo_me_2.jpg" class="img-thumbnail mx-auto rounded" alt="" style="width: 370px; height: 400px; object-fit: cover;">
                 </div>
             </div>
             
@@ -896,9 +896,9 @@ Un máster que me ha permitido descubir e interesarme por temas que desbordan el
 
 <section id="projects" class="py-5">
   <div class="container">
-    <h3 class="text-center">Algunos Proyectos</h3>
+    <h3 class="text-center mb-4">Algunos Proyectos</h3>
 
-    <div class="row justify-content-center px-3 px-md-5">
+    <div class="row justify-content-center px-3 px-md-5 pt-3">
       
 
       
@@ -906,16 +906,22 @@ Un máster que me ha permitido descubir e interesarme por temas que desbordan el
       
       <div class="col-lg-4 col-md-6 my-3">
         <div class="card h-100 text-center">
-          <img class="card-img-top" src="/rstudio.png" alt="Análisis Multinivel Bayesiano">
+          <div class="card-img-wrapper">
+            <a href="/proyectos/analisis_multinivel/">
+              <img class="" src="/media/bayesiano.png" alt="Análisis Multinivel Bayesiano">
+            </a>
+          </div>
           <div class="card-body d-flex flex-column justify-content-between">
             <div>
-              <h5 class="card-title">Análisis Multinivel Bayesiano</h5>
+              <h5 class="card-title">
+                <a href="/proyectos/analisis_multinivel/">Análisis Multinivel Bayesiano</a>
+              </h5>
               <p class="card-text">Análisis multinivel bayesiano de rendimiento en matemáticas en 10 centros educativos.
 </p>
             </div>
             <div class="mt-3">
-              <a href="/proyectos#R" class="btn-contact btn-md">
-                Proyectos en R
+              <a href="/proyectos/analisis_multinivel/" class="btn-contact btn-md">
+                Ver más
               </a>
             </div>
           </div>
@@ -928,16 +934,22 @@ Un máster que me ha permitido descubir e interesarme por temas que desbordan el
       
       <div class="col-lg-4 col-md-6 my-3">
         <div class="card h-100 text-center">
-          <img class="card-img-top" src="/Python.png" alt="Machine Learning Supervisado">
+          <div class="card-img-wrapper">
+            <a href="/proyectos/ML_supervised/">
+              <img class="" src="/media/ml_supervised.png" alt="Machine Learning Supervisado">
+            </a>
+          </div>
           <div class="card-body d-flex flex-column justify-content-between">
             <div>
-              <h5 class="card-title">Machine Learning Supervisado</h5>
+              <h5 class="card-title">
+                <a href="/proyectos/ML_supervised/">Machine Learning Supervisado</a>
+              </h5>
               <p class="card-text">Una serie de proyectos de clasificación con técnicas de Machine Learning Supervised.
 </p>
             </div>
             <div class="mt-3">
-              <a href="/proyectos#Python" class="btn-contact btn-md">
-                Proyectos en Python
+              <a href="/proyectos/ML_supervised/" class="btn-contact btn-md">
+                Ver más
               </a>
             </div>
           </div>
@@ -950,16 +962,22 @@ Un máster que me ha permitido descubir e interesarme por temas que desbordan el
       
       <div class="col-lg-4 col-md-6 my-3">
         <div class="card h-100 text-center">
-          <img class="card-img-top" src="/data-visualization.png" alt="Análisis Fuga de Empleados">
+          <div class="card-img-wrapper">
+            <a href="/proyectos/fuga_empleados/">
+              <img class="" src="/media/fuga_empleados.png" alt="Análisis Fuga de Empleados">
+            </a>
+          </div>
           <div class="card-body d-flex flex-column justify-content-between">
             <div>
-              <h5 class="card-title">Análisis Fuga de Empleados</h5>
+              <h5 class="card-title">
+                <a href="/proyectos/fuga_empleados/">Análisis Fuga de Empleados</a>
+              </h5>
               <p class="card-text">Predicción de rotación de personal con análisis y Machine Learning.
 </p>
             </div>
             <div class="mt-3">
-              <a href="/proyectos#estrategicos" class="btn-contact btn-md">
-                Proyectos Estratégicos
+              <a href="/proyectos/fuga_empleados/" class="btn-contact btn-md">
+                Ver más
               </a>
             </div>
           </div>
@@ -978,11 +996,8 @@ Un máster que me ha permitido descubir e interesarme por temas que desbordan el
     </div>
   </div>
 
-  
   <style>
-     
     .btn-contact {
-      transition: none;
       transition: opacity 0.3s;
       border-radius: .5rem !important;
       border: 1px solid var(--primary-color) !important;
@@ -994,13 +1009,26 @@ Un máster que me ha permitido descubir e interesarme por temas que desbordan el
       font-weight: 500;
     }
 
-    .btn-contact:hover {
-      opacity: 0.7;
+    .btn-contact:hover { opacity: 0.7; }
+    .btn-contact:focus { box-shadow: none !important; outline: none; }
+
+     
+    .card-title a {
+      text-decoration: none !important;
+      color: inherit;
+      transition: text-decoration 0.3s;
+    }
+    .card-title a:hover {
+      text-decoration: underline !important;
+      color: var(--primary-color);
     }
 
-    .btn-contact:focus {
-      box-shadow: none !important;
-      outline: none;
+     
+    .card-img-wrapper img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      display: block;
     }
   </style>
 </section>

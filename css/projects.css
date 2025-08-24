@@ -50,8 +50,8 @@
 
 #projects .card-img-top {
     transition: transform 0.3s;
-    width: 60% !important;  
-    margin-left: 20% !important; 
+    width: 100% !important;  
+    margin-left: 0% !important; 
     height: auto !important; 
 }
 
