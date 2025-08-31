@@ -23,6 +23,13 @@
       <description>&lt;p&gt;Mi timeline de Twitter (me niego a llamarlo X) es tan diversa que nada de lo humano le es ajeno, pero podría decirse que, en su mayoría, me muestra cuentas y perfiles relacionados con la estadística y la investigación científica. Hace unos días me encontré con el siguiente post:&#xA;&lt;br&gt;&lt;br&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://x.com/JesslovesMJK/status/1913104932552442287&#34;&gt;&lt;img src=&#34;http://localhost:1313/grafico.png&#34; alt=&#34;Tweet de Jessica Rose&#34;&gt;&lt;/a&gt;&#xA;&lt;br&gt;&lt;br&gt;&lt;/p&gt;&#xA;&lt;p&gt;Cualquiera que esté crónicamente en internet como yo, sabe que si un tweet recibe tantas interacciones es que algo pasa. Y normalmente, ese “algo” tiene que ver con polémica. Quien esté familiarizado con la creación e interpretación de gráficos probablemente haya notado otra cosa en primer lugar: ese número enorme en la imagen mostrando una correlación altísima (R = 0.9021).&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Análisis Multinivel Bayesiano</title>
+      <link>http://localhost:1313/proyectos/analisis_multinivel/</link>
+      <pubDate>Fri, 07 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/proyectos/analisis_multinivel/</guid>
+      <description>&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;una-aproximación-bayesiana-al-análisis-multinivel&#34;&gt;Una Aproximación Bayesiana al Análisis Multinivel&lt;/h2&gt;&#xA;&lt;br&gt;&#xD;&#xA;&lt;p&gt;El análisis multinivel es un procedimiento estadístico que permite dar cuenta de la idiosincrasia y, por ende, de la variabilidad no solo de los individuos, sino de sus agrupaciones: instituciones, centros educativos, territorios, etc. &lt;strong&gt;Todo depende de la articulación teórica desde la cual se parta.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Por ejemplo, se puede establecer como objeto de estudio a un grupo de personas formado por varios individuos y analizar las diferencias entre ellos (nivel 1), al mismo tiempo que se examinan las diferencias entre los grupos en los que dichos individuos se encuentran (nivel 2). Asimismo, es posible ampliar el modelo incorporando niveles adicionales, como territorios o países (nivel 3), para captar la variabilidad asociada a estructuras más complejas.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Estudio de Valores Perdidos en R</title>
       <link>http://localhost:1313/proyectos/valores_perdidos/</link>
       <pubDate>Sun, 02 Jun 2024 00:00:00 +0000</pubDate>
@@ -41,13 +48,6 @@
       <link>http://localhost:1313/proyectos/ecommerce/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/proyectos/ecommerce/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Análisis Multinivel Bayesiano</title>
-      <link>http://localhost:1313/proyectos/analisis_multinivel/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/proyectos/analisis_multinivel/</guid>
       <description></description>
     </item>
     <item>
