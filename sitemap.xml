@@ -38,6 +38,9 @@
     <loc>http://localhost:1313/fotos/</loc>
     <lastmod>2024-12-12T17:49:00+01:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/proyectos/valores_perdidos/</loc>
+    <lastmod>2024-06-02T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/proyectos/algoritmo_genetico/</loc>
   </url><url>
     <loc>http://localhost:1313/proyectos/ecommerce/</loc>
@@ -45,8 +48,6 @@
     <loc>http://localhost:1313/proyectos/analisis_multinivel/</loc>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
-  </url><url>
-    <loc>http://localhost:1313/proyectos/valores_perdidos/</loc>
   </url><url>
     <loc>http://localhost:1313/proyectos/ml_unsupervised/</loc>
   </url><url>
