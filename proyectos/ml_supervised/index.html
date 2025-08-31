@@ -31,15 +31,17 @@
 <meta property="og:url" content="http://localhost:1313/proyectos/ml_supervised/">
   <meta property="og:site_name" content="Alicia Gil Matute">
   <meta property="og:title" content="Machine Learning Supervisado">
-  <meta property="og:description" content="Una serie de proyectos de clasificación con técnicas de Machine Learning Supervised">
+  <meta property="og:description" content="Una serie de proyectos de clasificación con técnicas de Machine Learning Supervisado">
   <meta property="og:locale" content="es">
   <meta property="og:type" content="article">
     <meta property="article:section" content="proyectos">
+    <meta property="article:published_time" content="2024-05-30T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-05-30T00:00:00+00:00">
 
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Machine Learning Supervisado">
-  <meta name="twitter:description" content="Una serie de proyectos de clasificación con técnicas de Machine Learning Supervised">
+  <meta name="twitter:description" content="Una serie de proyectos de clasificación con técnicas de Machine Learning Supervisado">
 
 
 <link rel="stylesheet" href="/bootstrap-5/css/bootstrap.min.css" media="all"><link rel="stylesheet" href="/css/header.css" media="all">
@@ -103,7 +105,7 @@
 
 
 
-<meta name="description" content="Una serie de proyectos de clasificación con técnicas de Machine Learning Supervised">
+<meta name="description" content="Una serie de proyectos de clasificación con técnicas de Machine Learning Supervisado">
 <link rel="stylesheet" href="/css/single.css">
 
 
@@ -437,7 +439,7 @@ Machine Learning Supervisado | Alicia Gil Matute
             <h1 class="project-title text-center mb-4">Machine Learning Supervisado</h1>
             <div class="text-center">
               
-              Jan 1, 0001
+              May 30, 2024
               
               
               
@@ -446,7 +448,7 @@ Machine Learning Supervisado | Alicia Gil Matute
 
           
           
-            <p class="project-description text-center">Una serie de proyectos de clasificación con técnicas de Machine Learning Supervised</p>
+            <p class="project-description text-center">Una serie de proyectos de clasificación con técnicas de Machine Learning Supervisado</p>
           
 
           
@@ -512,7 +514,39 @@ Machine Learning Supervisado | Alicia Gil Matute
 
           
           <article class="page-content p- project-content">
-            
+            <p><br><br></p>
+<h2 id="árbol-de-decisión-y-bosques-aleatorios">Árbol de Decisión y Bosques Aleatorios</h2>
+<br>
+<h3 id="introducción">Introducción</h3>
+<p>La base de datos que emplearemos es una base de datos que recoge información de 200 personas, en concreto, se recoge información sobre su Edad, Sexo, Presión en Sangre, Niveles de Colesterol, Niveles de Sodio y Potasio y droga/medicación que se le receta. Queremos realizar un árbol aleatorio que tenga en cuenta todas estas variables y sea capaz de predecir qué droga/medicación debemos recetar a cada paciente.</p>
+<p>En primer lugar vamos a realizar una reestructuración de los datos y después un breve Análisis Exploratorio, para ver qué tipo de datos tenemos, cuantas categorías, valores perdidos, etc. Aunque ya adelantamos que no hay valores perdidos y que las variables cuantitativas son dad y Sodio-Potasio y el resto son categóricas.</p>
+<br>
+<h3 id="árbol-de-decisión">Árbol de Decisión</h3>
+<br>
+<div style="display:flex; justify-content:center; gap:30px; align-items:center;">
+  <figure style="margin:0; width:360px; text-align:center;">
+    <img src="/accuracy_tree.png" alt="Métricas de Evaluación del Árbol de Decisión" width="360">
+    <figcaption style="font-style:italic; margin-top:8px;">
+      Figura 1. Métricas de Evaluación del Árbol de Decisión.
+    </figcaption>
+  </figure>
+</div>
+<br>
+<p>Como podemos ver el <em>accuracy</em> del Árbol de Decisión es de 0.98 y su matriz de confusión es ideal (solo 1 caso no es clasificado correctamente). Con él, podríamos utilizarlo para predecir un caso nuevo que no existiera ni en el conjunto de entrenamiento ni el conjunto de test como se hace en el siguiente bloque de código:
+<br><br></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>X <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([<span style="color:#e6db74">&#39;20&#39;</span>, <span style="color:#e6db74">&#39;Male&#39;</span>, <span style="color:#e6db74">&#39;LOW&#39;</span>, <span style="color:#e6db74">&#39;LOW&#39;</span>, <span style="color:#e6db74">&#39;10&#39;</span>])
+</span></span><span style="display:flex;"><span>label <span style="color:#f92672">=</span> LabelEncoder()
+</span></span><span style="display:flex;"><span>X <span style="color:#f92672">=</span> label<span style="color:#f92672">.</span>fit_transform(X)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>y_pred <span style="color:#f92672">=</span> clf<span style="color:#f92672">.</span>predict(X<span style="color:#f92672">.</span>reshape(<span style="color:#ae81ff">1</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>))
+</span></span><span style="display:flex;"><span>y_pred
+</span></span></code></pre></div><p>Pero el Árbol de Decisión adolece de un problema que los Bosques Aleatorios no tienen: <strong>son poco generalizables</strong>. Los Bosques Aleatorios al implementar múltiples árboles, permiten una clasificación más robusta y confiable.
+<br><br></p>
+<h3 id="bosques-aleatorios">Bosques Aleatorios</h3>
+<h3 id="anexo-1-script-árboles-y-bosques-aleatorios">Anexo 1: <em>Script Árboles y Bosques Aleatorios</em></h3>
+<hr>
+<p><br><br></p>
+
           </article>
 
           
@@ -531,7 +565,18 @@ Machine Learning Supervisado | Alicia Gil Matute
           
           <aside class="toc">
               <h5>Tabla de Contenidos</h5>
-              <div class="toc-content"><nav id="TableOfContents"></nav></div>
+              <div class="toc-content"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#árbol-de-decisión-y-bosques-aleatorios">Árbol de Decisión y Bosques Aleatorios</a>
+      <ul>
+        <li><a href="#introducción">Introducción</a></li>
+        <li><a href="#árbol-de-decisión">Árbol de Decisión</a></li>
+        <li><a href="#bosques-aleatorios">Bosques Aleatorios</a></li>
+        <li><a href="#anexo-1-script-árboles-y-bosques-aleatorios">Anexo 1: <em>Script Árboles y Bosques Aleatorios</em></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
           </aside>
           
 

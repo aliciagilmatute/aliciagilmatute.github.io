@@ -30,6 +30,13 @@
       <description>&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;introducción&#34;&gt;Introducción&lt;/h2&gt;&#xA;&lt;p&gt;El análisis factorial confirmatorio (AFC) es la técnica estadística mediante la cual podemos establecer la estructura subyacente de una serie de variables observadas y así poder medir y usar variables no observables. Dicha técnica utiliza la matriz de varianzas y covarianzas para evaluar si los datos ajustan al modelo teórico, así que para realizar un AFC sobre unos datos, podemos introducir como input los datos en bruto o directamente la matriz de varianzas y covarianzas.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Machine Learning Supervisado</title>
+      <link>http://localhost:1313/proyectos/ml_supervised/</link>
+      <pubDate>Thu, 30 May 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/proyectos/ml_supervised/</guid>
+      <description>&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;árbol-de-decisión-y-bosques-aleatorios&#34;&gt;Árbol de Decisión y Bosques Aleatorios&lt;/h2&gt;&#xA;&lt;br&gt;&#xD;&#xA;&lt;h3 id=&#34;introducción&#34;&gt;Introducción&lt;/h3&gt;&#xA;&lt;p&gt;La base de datos que emplearemos es una base de datos que recoge información de 200 personas, en concreto, se recoge información sobre su Edad, Sexo, Presión en Sangre, Niveles de Colesterol, Niveles de Sodio y Potasio y droga/medicación que se le receta. Queremos realizar un árbol aleatorio que tenga en cuenta todas estas variables y sea capaz de predecir qué droga/medicación debemos recetar a cada paciente.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Algoritmo Genético</title>
       <link>http://localhost:1313/proyectos/algoritmo_genetico/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -37,7 +44,7 @@
       <description></description>
     </item>
     <item>
-      <title>Análisis Ecommerce</title>
+      <title>Análisis de Ventas Ecommerce</title>
       <link>http://localhost:1313/proyectos/ecommerce/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/proyectos/ecommerce/</guid>
@@ -48,13 +55,6 @@
       <link>http://localhost:1313/proyectos/ml_unsupervised/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/proyectos/ml_unsupervised/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Machine Learning Supervisado</title>
-      <link>http://localhost:1313/proyectos/ml_supervised/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/proyectos/ml_supervised/</guid>
       <description></description>
     </item>
     <item>
