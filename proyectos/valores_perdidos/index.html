@@ -35,6 +35,8 @@
   <meta property="og:locale" content="es">
   <meta property="og:type" content="article">
     <meta property="article:section" content="proyectos">
+    <meta property="article:published_time" content="2024-06-02T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-06-02T00:00:00+00:00">
 
 
   <meta name="twitter:card" content="summary">
@@ -437,7 +439,7 @@ Estudio de Valores Perdidos en R | Alicia Gil Matute
             <h1 class="project-title text-center mb-4">Estudio de Valores Perdidos en R</h1>
             <div class="text-center">
               
-              Jan 1, 0001
+              Jun 2, 2024
               
               
               
@@ -491,6 +493,20 @@ Estudio de Valores Perdidos en R | Alicia Gil Matute
               
 
               
+                <a href="https://www.kaggle.com/code/arrobarsandias/" target="_blank" aria-label="Kaggle">
+                  <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18.825 23.859c-.022.092-.117.141-.281.141h-3.139
+                             c-.187 0-.351-.082-.492-.248l-5.178-6.589-1.448 1.374v5.111
+                             c0 .235-.117.352-.351.352H5.505
+                             c-.236 0-.354-.117-.354-.352V.353
+                             c0-.233.118-.353.354-.353h2.431
+                             c.234 0 .351.12.351.353v14.343l6.203-6.272
+                             c.165-.165.33-.246.495-.246h3.239
+                             c.144 0 .236.06.285.18.046.149.034.255-.036.315
+                             l-6.555 6.344 6.836 8.507c.095.104.117.208.07.358"/>
+                  </svg>
+                </a>
+              
             </div>
           </div>
 
@@ -498,7 +514,242 @@ Estudio de Valores Perdidos en R | Alicia Gil Matute
 
           
           <article class="page-content p- project-content">
-            
+            <p><br><br></p>
+<h2 id="introducción">Introducción</h2>
+<p>El análisis factorial confirmatorio (AFC) es la técnica estadística mediante la cual podemos establecer la estructura subyacente de una serie de variables observadas y así poder medir y usar variables no observables. Dicha técnica utiliza la matriz de varianzas y covarianzas para evaluar si los datos ajustan al modelo teórico, así que para realizar un AFC sobre unos datos, podemos introducir como input los datos en bruto o directamente la matriz de varianzas y covarianzas.</p>
+<p>Sin embargo, si en nuestra base de datos existen valores perdidos, el software con el cual vayamos a trabajar va a utilizar alguna estrategia para poder realizar los cálculos sin estos valores perdidos (la más común es &ldquo;eliminación por lista&rdquo;). Esto provoca que nuestros análisis no estén utilizando todas las observaciones recogidas, sino muchas menos. Por ello existen estrategias modernas para no desechar tantos casos, como la imputación múltiple o la imputación por máxima verosimilitud.</p>
+<p>Este trabajo pretende poner a prueba la estrategia de imputación múltiple para realizar un AFC el cual recibe como input una matriz de varianzas y covarianzas calculada sobre una base de datos. Una base de datos sobre la que se han simulado valores perdidos MCAR y se han imputado mediante dicha estrategia. Queremos estudiar como recupera los parametros estimados de un AFC y sus indices de ajuste y compararlo con el modelo AFC que recibe como input la matriz de varianzas y covarianzas sin simular valores perdidos.</p>
+<br>
+<h2 id="objetivos-e-hipótesis">Objetivos e Hipótesis</h2>
+<p>El objetivo de este trabajo es el estudio de la recuperación de los parámetros estimados y los índices de ajuste de un modelo AFC que recibe como input una matriz de varianzas y covarianzas de unos datos imputados. De este manera se podrá comprobar si el método de imputación múltiple es recomendable para emplearse en modelos AFC.</p>
+<p>Nuestra hipótesis vaticina que las estimaciones y los índices de ajuste del modelo AFC imputado son muy similares a los del modelo AFC sin imputar.</p>
+<br>
+<h2 id="método">Método</h2>
+<p>La base de datos empleada es la llamada &ldquo;Liderazgo.sav&rdquo; donde se incluyen 15 variables de las cuales 13 son ítems que miden 3 factores relacionados con el liderazgo, pero de los cuales solo 11 forman parte de la estructura factorial (los items 3 y 9 no forman parte de la estructura factorial, como se puede ver en la imagen). Los ítems están medidos en una escala Likert con valores 1-7. El tamaño de la muestra es de 96 sujetos y todos los análisis se han realizado con el software R.</p>
+<br>
+<div style="display:flex; justify-content:center; gap:30px; align-items:center;">
+  <figure style="margin:0;">
+    <img src="/Estructura_AFC.png" alt="Estructura Factorial del Modelo de Liderazgo de Frutos (1998)" width="360">
+    <figcaption style="text-align:center; font-style:italic; margin-top:8px;">
+      Estructura Factorial del Modelo de Liderazgo de Frutos (1998)
+    </figcaption>
+  </figure>
+</div>
+<br><br>
+<p>En primer lugar, se cargan los archivos y se eliminan de la base de datos los ítems 3 y 9 que no forman parte de la estructura, y 2 variables que servían a otros objetivos del estudio. Después se calcula la matriz de varianzas y covarianzas de los datos originales que utilizaremos después para extraer la matriz residual y tener una primera impresión de sí se ha realizado bien o no la imputación múltiple.</p>
+<p>En segundo lugar, simulamos valores perdidos MCAR en el 40% de la muestra en todos los ítems y empleamos la librería mice para realizar la imputación múltiple. Se imputan 20 bases de datos mediante el método &ldquo;pmm&rdquo; (predictive mean matching) y después, mediante un bucle for() se realizan las matrices de varianzas y covarianzas de cada una de las 20 bases de datos imputadas.A continuación, calculamos la matriz promedio de esas 20 matrices de varianzas y covarianzas.</p>
+<p>En tercer lugar, especificamos el modelo de AFC que se ha presentado en la imagen e introducimos como input esa matriz promedio e indicamos que el método de estimación sea máxima verosimilitud (&ldquo;ML&rdquo;). Indicamos también que imprima los índices de ajuste.</p>
+<p>Por último, calculamos el modelo AFC con los datos originales (sin valores perdidos) pero introduciendo también como input la matriz de varianzas y covarianzas.</p>
+<p><br><br></p>
+<h2 id="resultadosbrbr">Resultados<br><br></h2>
+<h3 id="índices-de-ajuste-afc-imputado-vs-índices-de-ajuste-afc-original">Índices de Ajuste AFC imputado VS Índices de Ajuste AFC original</h3>
+<br>
+<div style="display:flex; justify-content:center; gap:30px; align-items:center;">
+  <figure style="margin:0;">
+    <img src="/ajuste_imp.png" alt="Output de R de los índices de ajuste 
+    del modelo imputado" width="360">
+    <figcaption style="text-align:center; font-style:italic; margin-top:8px;">
+      Output de R de los índices de ajuste del modelo imputado
+    </figcaption>
+  </figure>
+  <figure style="margin:0;">
+    <img src="/ajuste_raw.png" alt="Output de R de los índices de ajuste 
+    del modelo no imputado" width="370">
+    <figcaption style="text-align:center; font-style:italic; margin-top:8px;">
+      Output de R de los índices de ajuste del modelo no imputado
+    </figcaption>
+  </figure>
+</div>
+<br><br>
+<p>Como podemos observar, el valor del estadístico de chi-cuadrado resulta significativo en ambso modelos lo que signfica que el modelo propuesto ajusta a los datos, pero con valores de chi-cuadrado diferentes, en el modelo de AFC imputado se obtiene un valor de chi-cuadrado de 172.399 y en el modelo de AFC original un chi-cuadrado de 80.412. Igualmente, estan empleando la misma cantidad de información porque ambos están empleando 41 grados de libertad. Por otro lado, el índice de RMSEA que también evalua el ajuste del modelo a los datos resulta mayor a 0.05 en ambos modelos, con lo cual recibimos información contradictoria. Como el estadístico chi-cuadrado es tan sensible a la muestra, RMSEA resulta ser un índice más robusto con lo cual, basandonos en él, tanto el modelo AFC imputado como el modelo AFC original tiene un mal ajuste a los datos. Está cuestión, se comentará en los siguientes apartados.</p>
+<p>Respecto a los índices TLI y CFI hay diferencias más claras entre ambos modelos. Mientras que en modelo AFC imputado los valores estimados de TLI como CFI no superan el 0.95, en el modelo de AFC original sí son más próximos a 0.95. Con lo cual, el modelo AFC imputado recupera mal la mejora del ajuste respecto al modelo nulo.</p>
+<p><br><br></p>
+<h3 id="estimaciones-de-parámetros-modelo-afc-imputado-vs-estimaciones-de-parámetros-modelo-afc-original">Estimaciones de parámetros modelo AFC imputado VS estimaciones de parámetros modelo AFC original</h3>
+<br>
+<div style="display:flex; gap:20px; align-items:flex-start;">
+  <figure>
+    <img src="/estimaciones_imp.png" alt="Output de R de las estimaciones de los parámetros del modelo imputado" width="440">
+    <figcaption style="text-align:center; font-style:italic; margin-top:8px;">
+      Output de R de las estimaciones de los parámetros del modelo imputado
+    </figcaption>
+  </figure>
+  <figure>
+    <img src="/estimaciones_raw.png" alt="Output de R de las estimaciones de los parámetros del modelo no imputado" width="440">
+    <figcaption style="text-align:center; font-style:italic; margin-top:8px;">
+      Output de R de las estimaciones de los parámetros del modelo no imputado
+    </figcaption>
+  </figure>
+</div>
+<br><br>
+<h2 id="conclusiones">Conclusiones</h2>
+<p>Antes de comentar los resultados es importante aclarar lo siguiente: este trabajo no pretende evaluar el ajuste del modelo AFC original ni mejorarlo, y mucho menos pretendemos que el modelo AFC imputado supere en ajuste al modelo original, es imposible dado que solo podemos aspirar a que se parezca al ajuste original. Si el modelo AFC original tiene un ajuste mediocre (como es el caso) el ajuste del modelo imputado, por mucho que pueda parecerse al original, será igual de mediocre. Y lo mismo ocurre con los valores estimados para los pesos factoriales, si el modelo original tiene problemas obtendremos pesos factoriales mayores a 1, también los obtendrá el modelo imputado. Así que, lo que nos interesa evaluar dados los objetivos del estudio es como el modelo AFC imputado se parece al modelo AFC original, y no si alcanza un buen ajuste o pesos factoriales adecuados, porque el modelo AFC original no los alcanza.</p>
+<p>Por lo general podemos concluir que el método de imputación múltiple es eficaz porque recupera con bastante robusted el modelo AFC original introduciendo como input la matriz de varianzas y covarianzas. Los índices de ajuste, aunque en concreto TLI y CFI son los que más difieren (en el modelo AFC imputado interpretamos que no ajusta y en el modelo AFC original sí) no son valores muy dispares entre modelos y en términos muy generales, tienen un ajuste muy similar. Finalmente, respecto a los valores de los pesos factoriales y de las covarianzas entre factores, aunque puedan no coincidir, son diferencias mínimas y se llegan a las mismas interpretaciones.</p>
+<p>Por último, aunque no hayamos podido identificar el problema que puede subyacer al modelo AFC original para obtener unos índices de ajuste bastante mejorables y unos pesos factoriales superiores a 1, nuestra sospecha es que se debe al tamaño muestral. El tamaño muestral del estudio es de 96 sujetos y la literatura recomienda emplear muestras de 300 sujetos (200 mínimo) para realizar Análisis Factoriales Confirmatorios robustos. Por ello, nuestra recomendación para futuros estudios es que se recoja un tamaño muestral adecuado, pero no excesivamente grande dado que chi-cuadrado es sensible al tamaño muestral.</p>
+<p><br><br></p>
+<h2 id="anexo-script-de-r">ANEXO: <em>&ldquo;Script de R&rdquo;</em></h2>
+<!-- idea: incluir los notebooks con jupyter book como anexo de cada proyecto?? -->
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">rm</span>(list<span style="color:#f92672">=</span><span style="color:#a6e22e">ls</span>())
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">set.seed</span>(<span style="color:#ae81ff">123</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(haven)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(mice)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(reshape2) 
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(mitml)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(lme4)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(lavaan)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(semPlot)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(psych)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>datos <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">read_sav</span>(<span style="color:#e6db74">&#34;Liderazgo.sav&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">View</span>(datos)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">table</span>(<span style="color:#a6e22e">is.na</span>(datos))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#obtenemos la matriz de var-cov de los datos  brutos para chequear luego como recupera la matriz la imputación múltiple obteniendo la matriz residual</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>datos <span style="color:#f92672">&lt;-</span> datos[,<span style="color:#f92672">-</span><span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">14</span>,<span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">9</span>)] <span style="color:#75715e">#quitamos las variables de los factores y de los ítems que no forman parte del modelo CFA</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>raw_m <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">cov</span>(datos)
+</span></span><span style="display:flex;"><span>raw_m
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Simulamos valores NA al 40% (MCAR)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>datos_NA <span style="color:#f92672">&lt;-</span> datos
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">table</span>(<span style="color:#a6e22e">is.na</span>(datos_NA))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Proporción de valores perdidos a introducir (puedes ajustar según tus necesidades)</span>
+</span></span><span style="display:flex;"><span>proporcion_NA<span style="color:#f92672">&lt;-</span> <span style="color:#ae81ff">0.4</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Obtener el número de filas y columnas en tus datos</span>
+</span></span><span style="display:flex;"><span>num_filas <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">nrow</span>(datos_NA)
+</span></span><span style="display:flex;"><span>num_columnas <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">ncol</span>(datos_NA)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Calcular el número total de valores a introducir como perdidos</span>
+</span></span><span style="display:flex;"><span>num_NA <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">round</span>(proporcion_NA<span style="color:#f92672">*</span> num_filas <span style="color:#f92672">*</span> num_columnas)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Generar ubicaciones aleatorias para los valores perdidos</span>
+</span></span><span style="display:flex;"><span>ubicaciones_NA <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">data.frame</span>(
+</span></span><span style="display:flex;"><span>  fila <span style="color:#f92672">=</span> <span style="color:#a6e22e">sample</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>num_filas, num_NA, replace <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>),
+</span></span><span style="display:flex;"><span>  columna <span style="color:#f92672">=</span> <span style="color:#a6e22e">sample</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>num_columnas, num_NA, replace <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Introducir valores perdidos en las ubicaciones generadas</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (i <span style="color:#66d9ef">in</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>num_NA) {
+</span></span><span style="display:flex;"><span>  datos_NA[ubicaciones_NA<span style="color:#f92672">$</span>fila[i], ubicaciones_NA<span style="color:#f92672">$</span>columna[i]] <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">NA</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">table</span>(<span style="color:#a6e22e">is.na</span>(datos_NA))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">write.csv</span>(datos_NA,<span style="color:#e6db74">&#34;liderazgo_NA.txt&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">View</span>(datos_NA)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">str</span>(datos_NA)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#imputamos datos</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>imp <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">mice</span>(datos_NA, seed <span style="color:#f92672">=</span> <span style="color:#ae81ff">20000</span>, meth <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;pmm&#34;</span>, m <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>)
+</span></span><span style="display:flex;"><span>imp<span style="color:#f92672">$</span>imp<span style="color:#f92672">$</span>p1  <span style="color:#75715e"># Imputación del primer item en las 20 bases de datos</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>complete_data <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">complete</span>(imp, <span style="color:#ae81ff">1</span>)  <span style="color:#75715e"># Imputación de la base de datos 1, los 13 items</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>matrices <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">list</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (i <span style="color:#66d9ef">in</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">20</span>) {
+</span></span><span style="display:flex;"><span>  data <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">complete</span>(imp, action <span style="color:#f92672">=</span> i)
+</span></span><span style="display:flex;"><span>  cov_matrix <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">cov</span>(data)
+</span></span><span style="display:flex;"><span>  matrices[[i]] <span style="color:#f92672">&lt;-</span> cov_matrix
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">head</span>(matrices)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Ahora promedio las matrices de covarianza</span>
+</span></span><span style="display:flex;"><span>average_cov_matrix <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">Reduce</span>(`+`, matrices) <span style="color:#f92672">/</span> <span style="color:#a6e22e">length</span>(matrices)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">################Recuperación de la matriz (matriz residual)###################</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#raw_m[upper.tri(raw_m)] &lt;- 0</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#raw_m</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#average_cov_matrix[upper.tri(average_cov_matrix)] &lt;- 0</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#average_cov_matrix</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#m_dif &lt;- raw_m-average_cov_matrix  #(residuos muy bajos,la imputacion recupera bien)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#m_dif</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">###############################################################################</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Definiendo el modelo de CFA</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>modelo <span style="color:#f92672">&lt;-</span> <span style="color:#e6db74">&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  factor1 =~ p1 + p2 + p8 + p5 + p12
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  factor2 =~ p4 + p7 + p10 + p11
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  factor3 =~ p6 + p13
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  factor1 ~~ factor2
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  factor1 ~~ factor3
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  factor2 ~~ factor3
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Realizando el CFA con la matriz de covarianza promediada</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>afc <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">cfa</span>(modelo, sample.cov <span style="color:#f92672">=</span> average_cov_matrix, sample.nobs <span style="color:#f92672">=</span> <span style="color:#ae81ff">96</span>, std.lv <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>, meanstructure <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>, estimator <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;ML&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">summary</span>(afc, standardized<span style="color:#f92672">=</span><span style="color:#66d9ef">TRUE</span>, fit.measures<span style="color:#f92672">=</span><span style="color:#66d9ef">TRUE</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">coef</span>(afc)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">semPaths</span>(afc,<span style="color:#e6db74">&#34;std&#34;</span>,edge.label.cex<span style="color:#f92672">=</span><span style="color:#ae81ff">0.5</span>, curvePivot <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">############## Realizamos también el CFA con los datos brutos (sin simular datos MCAR) e introduciendo como input la matriz de varianzas-covarianzas##################</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>raw_datos <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">read_sav</span>(<span style="color:#e6db74">&#34;Liderazgo.sav&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">str</span>(raw_datos)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#eliminamos variables innecesarias y las que no estan incluidas en el modelo</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>raw_datos <span style="color:#f92672">&lt;-</span> raw_datos[,<span style="color:#f92672">-</span><span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">14</span>,<span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">9</span>)]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">head</span>(raw_datos)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>matriz <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">cov</span>(raw_datos)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>matriz
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#CFA </span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>raw_modelo <span style="color:#f92672">&lt;-</span> <span style="color:#e6db74">&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  factor1=~p1+p2+p8+p5+p12
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  factor2=~p4+p7+p10+p11
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  factor3=~p6+p13
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  factor1~~factor2
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  factor1~~factor3
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  factor2~~factor3
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>raw_afc <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">cfa</span>(raw_modelo, sample.cov <span style="color:#f92672">=</span> matriz, sample.nobs <span style="color:#f92672">=</span> <span style="color:#ae81ff">96</span>, std.lv <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>, meanstructure <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>, estimator <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;ML&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">summary</span>(raw_afc, standardized<span style="color:#f92672">=</span><span style="color:#66d9ef">TRUE</span>, fit.measures<span style="color:#f92672">=</span><span style="color:#66d9ef">TRUE</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">coef</span>(raw_afc)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">semPaths</span>(raw_afc,<span style="color:#e6db74">&#34;std&#34;</span>,edge.label.cex<span style="color:#f92672">=</span><span style="color:#ae81ff">0.5</span>, curvePivot <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
+</span></span></code></pre></div>
           </article>
 
           
@@ -517,7 +768,21 @@ Estudio de Valores Perdidos en R | Alicia Gil Matute
           
           <aside class="toc">
               <h5>Tabla de Contenidos</h5>
-              <div class="toc-content"><nav id="TableOfContents"></nav></div>
+              <div class="toc-content"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#introducción">Introducción</a></li>
+    <li><a href="#objetivos-e-hipótesis">Objetivos e Hipótesis</a></li>
+    <li><a href="#método">Método</a></li>
+    <li><a href="#resultadosbrbr">Resultados<br><br></a>
+      <ul>
+        <li><a href="#índices-de-ajuste-afc-imputado-vs-índices-de-ajuste-afc-original">Índices de Ajuste AFC imputado VS Índices de Ajuste AFC original</a></li>
+        <li><a href="#estimaciones-de-parámetros-modelo-afc-imputado-vs-estimaciones-de-parámetros-modelo-afc-original">Estimaciones de parámetros modelo AFC imputado VS estimaciones de parámetros modelo AFC original</a></li>
+      </ul>
+    </li>
+    <li><a href="#conclusiones">Conclusiones</a></li>
+    <li><a href="#anexo-script-de-r">ANEXO: <em>&ldquo;Script de R&rdquo;</em></a></li>
+  </ul>
+</nav></div>
           </aside>
           
 

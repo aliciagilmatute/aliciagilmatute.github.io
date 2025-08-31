@@ -23,6 +23,13 @@
       <description>&lt;p&gt;Mi timeline de Twitter (me niego a llamarlo X) es tan diversa que nada de lo humano le es ajeno, pero podría decirse que, en su mayoría, me muestra cuentas y perfiles relacionados con la estadística y la investigación científica. Hace unos días me encontré con el siguiente post:&#xA;&lt;br&gt;&lt;br&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://x.com/JesslovesMJK/status/1913104932552442287&#34;&gt;&lt;img src=&#34;http://localhost:1313/grafico.png&#34; alt=&#34;Tweet de Jessica Rose&#34;&gt;&lt;/a&gt;&#xA;&lt;br&gt;&lt;br&gt;&lt;/p&gt;&#xA;&lt;p&gt;Cualquiera que esté crónicamente en internet como yo, sabe que si un tweet recibe tantas interacciones es que algo pasa. Y normalmente, ese “algo” tiene que ver con polémica. Quien esté familiarizado con la creación e interpretación de gráficos probablemente haya notado otra cosa en primer lugar: ese número enorme en la imagen mostrando una correlación altísima (R = 0.9021).&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Estudio de Valores Perdidos en R</title>
+      <link>http://localhost:1313/proyectos/valores_perdidos/</link>
+      <pubDate>Sun, 02 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/proyectos/valores_perdidos/</guid>
+      <description>&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;introducción&#34;&gt;Introducción&lt;/h2&gt;&#xA;&lt;p&gt;El análisis factorial confirmatorio (AFC) es la técnica estadística mediante la cual podemos establecer la estructura subyacente de una serie de variables observadas y así poder medir y usar variables no observables. Dicha técnica utiliza la matriz de varianzas y covarianzas para evaluar si los datos ajustan al modelo teórico, así que para realizar un AFC sobre unos datos, podemos introducir como input los datos en bruto o directamente la matriz de varianzas y covarianzas.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Algoritmo Genético</title>
       <link>http://localhost:1313/proyectos/algoritmo_genetico/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -41,13 +48,6 @@
       <link>http://localhost:1313/proyectos/analisis_multinivel/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/proyectos/analisis_multinivel/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Estudio de Valores Perdidos en R</title>
-      <link>http://localhost:1313/proyectos/valores_perdidos/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/proyectos/valores_perdidos/</guid>
       <description></description>
     </item>
     <item>
