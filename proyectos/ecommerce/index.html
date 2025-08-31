@@ -35,6 +35,8 @@
   <meta property="og:locale" content="es">
   <meta property="og:type" content="article">
     <meta property="article:section" content="proyectos">
+    <meta property="article:published_time" content="2025-08-12T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-08-12T00:00:00+00:00">
 
 
   <meta name="twitter:card" content="summary">
@@ -437,7 +439,7 @@ Análisis de Ventas Ecommerce | Alicia Gil Matute
             <h1 class="project-title text-center mb-4">Análisis de Ventas Ecommerce</h1>
             <div class="text-center">
               
-              Jan 1, 0001
+              Aug 12, 2025
               
               
               
@@ -447,6 +449,7 @@ Análisis de Ventas Ecommerce | Alicia Gil Matute
           
           
             <p class="project-description text-center">Incremento en las ventas de &#39;SanoyFresco&#39; al crear un recomendador online basado en la técnica &#39;Market Basket Analysis&#39;</p>
+            
           
 
           
@@ -459,7 +462,7 @@ Análisis de Ventas Ecommerce | Alicia Gil Matute
             <strong>Repositorios:</strong>
             <div class="materiales-botones">
               
-                <a href="https://github.com/tu_usuario/tu_repositorio" target="_blank" aria-label="GitHub">
+                <a href="https://github.com/arrobarsandias/tu_repositorio" target="_blank" aria-label="GitHub">
                   <svg role="img" viewBox="0 0 24 24">
                     <path d="M12 .297c-6.63 0-12 5.373-12 12 
                              0 5.303 3.438 9.8 8.205 11.387
@@ -512,7 +515,322 @@ Análisis de Ventas Ecommerce | Alicia Gil Matute
 
           
           <article class="page-content p- project-content">
-            
+            <p><br><br></p>
+<p>El trabajo de un Data Scientist en el mundo del Business Intelligence se podría resumir en 3 grandes grupos de tareas:</p>
+<ul>
+<li><strong>Generación de Insights</strong>: analizar los datos para encontrar resultados y conclusiones que puedan tener impacto en el negocio de la empresa.</li>
+<li><strong>Creación de Informes, cuadros de mando y Dashboards</strong>: permiten organizar la información relevante para la empresa, estructurándola, analizándola y presentándola en forma de resultados visualmente atractivos y fácilmente entendibles por los usuarios de negocio.</li>
+<li><strong>Proyectos Ad hoc</strong>: problemas concretos que preocupan en un momento dado y que pueden ser resueltos mediante análisis de datos.</li>
+</ul>
+<p>Este proyecto contiene casos de los 3 tipos de tareas típicas de un Data Scientist con diferentes herramientas: SQL, PowerBI, Python.
+<br><br></p>
+<div style="display:flex; justify-content:center; gap:30px; align-items:flex-start;">
+  <figure style="margin:0; width:500px; text-align:center;">
+    <img src="/ecommerce_hoja1.png" alt="Dashboard de Ventas del Último Año" width="800" height="280">
+    <figcaption style="font-style:italic; margin-top:8px;">
+      Dashboard de Ventas del Último Año
+    </figcaption>
+  </figure>
+  <figure style="margin:0; width:500px; text-align:center;">
+    <img src="/ecommerce_hoja2.png" alt="Aplicación del Algoritmo del recomendador (Market Basket Analysis)" width="800" height="280">
+    <figcaption style="font-style:italic; margin-top:8px;">
+      Aplicación del Algoritmo del recomendador (Market Basket Analysis)
+    </figcaption>
+  </figure>
+</div>
+<br><br>
+<h2 id="contexto">Contexto</h2>
+<p>Trabajamos para una Ecommerce que vende productos frescos y saludables. Es una startup llamada ‘SanoyFresco’ que estaba creciendo mucho, pero por algún motivo en el último año ha empezado a perder muchas ventas. Y por eso han decidido invertir en contratar a analistas de datos para empezar a tomar las decisiones de una manera más profesional basándose en datos.</p>
+<p>Lo primero que vas a hacer es analizar datos para entender cómo está la situación de las ventas. Es algo que el director general suele pedir para presentarlo en el Consejo de Administración.</p>
+<p>Después vas a crear un cuadro de mando para solucionar el primer problema urgente de la empresa que es la falta de una fuente de información única. Cada director de cada departamento lleva a las reuniones sus propios datos y al final es imposible ponerse de acuerdo y tomar decisiones basándose en datos. Pondremos orden en toda esta información y crearemos la fuente única de la verdad en cuanto a datos que será utilizada en la empresa a partir de ahora.</p>
+<p>Tras ello nos piden que ayudemos en la parte de intentar remontar las ventas. Y para ello vamos a crear un algoritmo en Python que analice el histórico de las compras y localice patrones consistentes en los datos que nos permiten incrementar las futuras ventas. Del estilo de: ‘si el cliente ha comprado esto, entonces también tiene muy alta probabilidad de estar interesado en esto otro’, y por lo tanto se lo vamos a recomendar en el recomendador de la página del Ecommerce. Esto va a ayudar a aumentar el ‘Ticket Medio de Compra’.</p>
+<p>Y, por último, le daremos al usuario de negocio una interfaz gráfica y amigable con la que interactuar con el algoritmo que has construido. El usuario de negocio no conoce Python y no va a saber trabajar a partir del código que tú escribas, así que crearemos una especie de aplicación en PowerBI para que él pueda acceder a esas reglas, a esos patrones, identificados por el algoritmo de una manera totalmente visual y no técnica.</p>
+<p><br><br></p>
+<h2 id="1-generación-de-insights-con-sql">1. Generación de Insights con SQL</h2>
+<br>
+<h3 id="objetivos">Objetivos</h3>
+<p>Generar Insights del negocio para presentar en el Consejo de Administración
+<br><br></p>
+<h3 id="instrucciones">Instrucciones</h3>
+<p>Lo haremos directamente contra la base de datos, sin extraer información dado que solo necesitamos unos datos puntuales. Usaremos SQL y son consultas muy sencillas.</p>
+<p>Utilizaremos el <em>framework</em> de la pirámide que nos sirva como guía para decidir qué preguntas, es decir qué consultas, queremos extraer de la base de datos. Son mapas de ruta muy útiles que nos permiten separar el grano de la paja ante tanto dato para dar respuesta a lo que nos interesa saber.</p>
+<br>
+<div style="display:flex; justify-content:center; gap:30px; align-items:center;">
+  <figure style="margin:0; width:360px; text-align:center;">
+    <img src="/piramide_framework.png" alt="Framework de la Pirámide" width="360">
+    <figcaption style="font-style:italic; margin-top:8px;">
+      Figura 1. Framework de la Pirámide.
+    </figcaption>
+  </figure>
+</div>
+<br><br>
+<h3 id="diseño-analítico">Diseño Analítico</h3>
+<p>Para realizar un análisis integral del negocio es importante seguir un enfoque estructurado que vaya de lo general a lo específico. Comenzaremos con una visión general de las ventas totales, luego analizaremos la tendencia de las mismas, profundizaremos en los productos y finalmente examinaremos el comportamiento de los clientes y de los pedidos.</p>
+<p>Daremos respuesta acerca de la situación de las &lsquo;Ventas y tendencia&rsquo;, los &lsquo;Productos y secciones&rsquo; y los &lsquo;Clientes y pedidos&rsquo; mediante las siguientes preguntas:
+<br><br></p>
+<p>Pregunta 0: ¿Qué datos contiene la tabla a analizar?</p>
+<p><strong>VENTAS Y TENDENCIA</strong></p>
+<p>Pregunta 1: ¿Cuál es el ingreso total generado por el negocio?</p>
+<p>Pregunta 2: ¿Cómo ha sido la tendencia de ingresos mensuales?</p>
+<p><strong>PRODUCTOS Y SECCIONES</strong></p>
+<p>Pregunta 3: ¿Cuál es el rendimiento de cada departamento en términos de ventas?</p>
+<p>Pregunta 4: ¿Cómo se distribuyen las ventas entre las diferentes secciones?</p>
+<p>Pregunta 5: ¿Cuáles son los 10 productos más vendidos en cantidad?</p>
+<p>Pregunta 6: ¿Qué 10 productos generan más ingresos?</p>
+<p><strong>CLIENTES Y PEDIDOS</strong></p>
+<p>Pregunta 7: ¿Quiénes son los 20 clientes que más compran en términos de ingresos?</p>
+<p>Pregunta 8: ¿Cuál es la compra media por cliente?</p>
+<p>Pregunta 9: ¿Cuántos pedidos totales se han realizado?</p>
+<p>Pregunta 10: ¿Cuál es el valor promedio por pedido?</p>
+<p><br><br></p>
+<h3 id="desarrollo">Desarrollo</h3>
+<p>Y con estas consultas SQL damos respuesta a esas preguntas:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#75715e">-- 0 PREGUNTA
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> tickets <span style="color:#66d9ef">LIMIT</span> <span style="color:#ae81ff">100</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">--1 PREGUNTA
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">SUM</span>(precio_total) <span style="color:#66d9ef">AS</span> ingreso_total <span style="color:#66d9ef">FROM</span> tickets;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- 2 PREGUNTA
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">SELECT</span> strftime(<span style="color:#e6db74">&#39;%Y-%m&#39;</span>, fecha) <span style="color:#66d9ef">AS</span> mes, <span style="color:#66d9ef">SUM</span> (precio_total) <span style="color:#66d9ef">AS</span> ingreso_meansual 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">from</span> tickets
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> mes
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> mes;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- 3 PREGUNTA
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> id_departamento, <span style="color:#66d9ef">SUM</span>(precio_total) <span style="color:#66d9ef">AS</span> ventas_departamento <span style="color:#66d9ef">FROM</span> tickets 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> id_departamento
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> ventas_departamento <span style="color:#66d9ef">DESC</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- 4 PREGUNTA
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> id_seccion, <span style="color:#66d9ef">SUM</span>(precio_total) <span style="color:#66d9ef">AS</span> ventas_seccion <span style="color:#66d9ef">FROM</span> tickets
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> id_seccion
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> ventas_seccion <span style="color:#66d9ef">DESC</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- 5 PREGUNTA 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">SELECT</span> nombre_producto, <span style="color:#66d9ef">SUM</span>(cantidad) <span style="color:#66d9ef">AS</span> top10_cantidad <span style="color:#66d9ef">FROM</span> tickets
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> nombre_producto
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> top10_cantidad <span style="color:#66d9ef">DESC</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">LIMIT</span> <span style="color:#ae81ff">10</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- 6 PREGUNTA
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> nombre_producto, <span style="color:#66d9ef">SUM</span>(precio_total) <span style="color:#66d9ef">AS</span> top10_ingresos <span style="color:#66d9ef">FROM</span> tickets
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> nombre_producto
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> top10_ingresos <span style="color:#66d9ef">DESC</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">LIMIT</span> <span style="color:#ae81ff">10</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- 7 PREGUNTA
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">SELECT</span> id_cliente, <span style="color:#66d9ef">SUM</span>(precio_total) <span style="color:#66d9ef">AS</span> top20_clientes <span style="color:#66d9ef">FROM</span> tickets
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> id_cliente
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> top20_clientes <span style="color:#66d9ef">DESC</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">LIMIT</span> <span style="color:#ae81ff">20</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- 8 PREGUNTA
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">AVG</span> (compra_total_cliente) <span style="color:#66d9ef">AS</span> compra_media_cliente
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span>(<span style="color:#66d9ef">SELECT</span> id_cliente, <span style="color:#66d9ef">SUM</span>(precio_total) <span style="color:#66d9ef">AS</span> compra_total_cliente 
+</span></span><span style="display:flex;"><span>     <span style="color:#66d9ef">FROM</span> tickets
+</span></span><span style="display:flex;"><span>     <span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> id_cliente) subconsulta;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- 9 PREGUNTA
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">COUNT</span>(<span style="color:#66d9ef">DISTINCT</span> (id_pedido)) <span style="color:#66d9ef">AS</span> total_pedidos <span style="color:#66d9ef">from</span> tickets;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- 10 PREGUNTA
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">AVG</span> (precio_total_pedido) <span style="color:#66d9ef">AS</span> media_pedido
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span>(<span style="color:#66d9ef">SELECT</span> id_pedido, <span style="color:#66d9ef">SUM</span>(precio_total) <span style="color:#66d9ef">AS</span> precio_total_pedido 
+</span></span><span style="display:flex;"><span>     <span style="color:#66d9ef">from</span> tickets
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> id_pedido)subconsulta;
+</span></span></code></pre></div><!-- resultados jupyer-book?? -->
+<p><br><br></p>
+<h3 id="conclusiones">Conclusiones</h3>
+<ul>
+<li>La disminución de las ventas se debe a la pérdida de clientes. Pero los clientes que se quedan compran más.</li>
+<li>Aumento del ticket medio por cliente y por pedido.</li>
+</ul>
+<!-- - *Informe* -->
+<br>
+<blockquote>
+<p>💡 <strong>TIP</strong></p>
+<p>El trabajo del analista de datos sigue la estrategia:
+Análisis de datos → Evidencias → Insights</p>
+<p>Sin embargo, al comunicar los resultados a personal no especializado, el <em>framework</em> de la pirámide recomienda presentarlo en orden inverso:
+Insights → Evidencias → Análisis de datos</p>
+</blockquote>
+<hr>
+<br>
+<h2 id="2-creando-un-algoritmo-con-python">2. Creando un Algoritmo con Python</h2>
+<br>
+<h3 id="objetivos-1">Objetivos</h3>
+<p>A largo plazo: trabajar en la adquisición y fidelización de clientes.</p>
+<p>A corto plazo: incrementar las ventas.</p>
+<br>
+<h3 id="instrucciones-1">Instrucciones</h3>
+<p>Crear un algoritmo de Python que permita vender más productos en cada transacción. El algoritmo estará basado en la técnica <em>‘Market Basket Analysis’</em>.</p>
+<br>
+<h3 id="diseño-analítico-1">Diseño Analítico</h3>
+<p><em>‘Market Basket Analysis’</em>: metodología muy usada en todo tipo de empresas para hacer recomendaciones personalizadas a cada usuario en base a lo que ya ha comprado o en lo que tiene interés.</p>
+<p>Conceptos clave:</p>
+<ul>
+<li><strong>Antecedente (A)</strong>: el “si…”. Conjunto de ítems en el lado izquierdo de la regla. Ej.: A = {manzana}.<br></li>
+<li><strong>Consecuente (B)</strong>: el “entonces…”. Conjunto de ítems en el lado derecho. Ej.: B = {plátano}.<br><br></li>
+<li><strong>Soporte</strong>: qué probabilidad hay de que manzana y plátano aparezcan juntos en una transacción. Así que simplemente dividimos la frecuencia por el número de todas las transacciones.<br><br></li>
+<li><strong>Confianza</strong>: probabilidad de ver B dado que aparece A. En nuestro ejemplo esto significa: ¿Qué probabilidad hay de que, si la manzana está en la cesta, entonces plátano también lo esté? Podemos calcularlo dividiendo la frecuencia de la manzana y el plátano por la frecuencia de la manzana.<br><br></li>
+<li><strong>Lift</strong>: el lift indica la intensidad por el cual la probabilidad de comprar los productos consecuentes aumenta si los productos antecedentes ya han sido comprados. Así, en nuestro ejemplo, si el producto manzana está en la cesta de la compra, es 1.27 veces más probable que se compre plátano que si el producto manzana no está en la cesta.<br><br></li>
+</ul>
+<p>Más información sobre la técnica <em>‘Market Basket Analysis’</em>:</p>
+<ul>
+<li><a href="https://datatab.es/tutorial/market-basket-analysis">https://datatab.es/tutorial/market-basket-analysis</a></li>
+<li><a href="https://iasolver.es/todo-sobre-el-market-basket-analysis-y-su-utilidad-en-el-sector-minorista-y-retail">https://iasolver.es/todo-sobre-el-market-basket-analysis-y-su-utilidad-en-el-sector-minorista-y-retail</a></li>
+</ul>
+<p><br><br></p>
+<h3 id="desarrollo-1">Desarrollo</h3>
+<p>A continuación, vamos a aplicar la lógica explicada del <em>&lsquo;Market Basker Analysis&rsquo;</em> en el siguiente código de Python usando la base de datos con la que hemos hecho las consultas SQL:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> sqlite3
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>conexion<span style="color:#f92672">=</span>sqlite3<span style="color:#f92672">.</span>connect(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;C:\Users\alici\Desktop\Programación\Data4Business\Experiencia Junior\sanoyfresco.db&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>df<span style="color:#f92672">=</span>pd<span style="color:#f92672">.</span>read_sql_query(<span style="color:#e6db74">&#34;SELECT * FROM tickets&#34;</span>,conexion)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>df<span style="color:#f92672">.</span>head()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>conexion<span style="color:#f92672">.</span>close()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>df<span style="color:#f92672">.</span>info()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>df[<span style="color:#e6db74">&#39;fecha&#39;</span>]<span style="color:#f92672">=</span>pd<span style="color:#f92672">.</span>to_datetime(df[<span style="color:#e6db74">&#39;fecha&#39;</span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>df_cesta<span style="color:#f92672">=</span>df[[<span style="color:#e6db74">&#39;id_pedido&#39;</span>,<span style="color:#e6db74">&#39;nombre_producto&#39;</span>]]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>df_cesta<span style="color:#f92672">.</span>head()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Agrupar los productos por id_pedido e incluir en una misma celda el nombre de todos los productos del pedido</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>df_agrupado<span style="color:#f92672">=</span>df_cesta<span style="color:#f92672">.</span>groupby(<span style="color:#e6db74">&#39;id_pedido&#39;</span>)[<span style="color:#e6db74">&#39;nombre_producto&#39;</span>]<span style="color:#f92672">.</span>apply(<span style="color:#66d9ef">lambda</span> producto: <span style="color:#e6db74">&#39;,&#39;</span><span style="color:#f92672">.</span>join(producto))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>df_agrupado<span style="color:#f92672">.</span>head()
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Aplicar pd.get_dummies() para transformar los productos en columnas con 0/1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>df_transacciones<span style="color:#f92672">=</span>df_agrupado<span style="color:#f92672">.</span>str<span style="color:#f92672">.</span>get_dummies(sep<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;,&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>df_transacciones<span style="color:#f92672">.</span>head()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#**IMPORTANTE** Recordemos que vamos a calcular el soporte individual del antecedente lo cual se define como la suma de las veces que se ha comprado el producto entre el total de los pedidos. Pero al haber convertido los datos en dummies (1/0), la suma de los 1 se corresponde con la media (truco matemático). Con lo cual, pasamos directamente a calcular la media.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>soporte<span style="color:#f92672">=</span>df_transacciones<span style="color:#f92672">.</span>mean()<span style="color:#f92672">*</span><span style="color:#ae81ff">100</span>
+</span></span><span style="display:flex;"><span>soporte<span style="color:#f92672">.</span>sort_values(ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Función para calcular la confianza entre dos productos en la muestra</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">confianza</span>(antecedente, consecuente):
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Casos donde se compraron ambos productos</span>
+</span></span><span style="display:flex;"><span>    conjunto_ac <span style="color:#f92672">=</span> df_transacciones[(df_transacciones[antecedente] <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">&amp;</span>
+</span></span><span style="display:flex;"><span>                                   (df_transacciones[consecuente] <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>)]
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Confianza = compras conjuntas / compras de producto A</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> len(conjunto_ac) <span style="color:#f92672">/</span> df_transacciones[antecedente]<span style="color:#f92672">.</span>sum()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Función para calcular el lift entre dos productos en la muestra</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">lift</span>(antecedente, consecuente):
+</span></span><span style="display:flex;"><span>    soporte_a <span style="color:#f92672">=</span> df_transacciones[antecedente]<span style="color:#f92672">.</span>mean()
+</span></span><span style="display:flex;"><span>    soporte_c <span style="color:#f92672">=</span> df_transacciones[consecuente]<span style="color:#f92672">.</span>mean()
+</span></span><span style="display:flex;"><span>    conteo_ac <span style="color:#f92672">=</span> len(df_transacciones[(df_transacciones[antecedente] <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">&amp;</span>
+</span></span><span style="display:flex;"><span>                                   (df_transacciones[consecuente] <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>)])
+</span></span><span style="display:flex;"><span>    soporte_ac <span style="color:#f92672">=</span> conteo_ac <span style="color:#f92672">/</span> len(df_transacciones)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> soporte_ac <span style="color:#f92672">/</span> (soporte_a <span style="color:#f92672">*</span> soporte_c)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> itertools <span style="color:#f92672">import</span> combinations
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Definir un umbral para la confianza mínima</span>
+</span></span><span style="display:flex;"><span>umbral_confianza <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.05</span>
+</span></span><span style="display:flex;"><span>asociaciones <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Generar combinaciones de productos y calcular confianza y lift</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> antecedente, consecuente <span style="color:#f92672">in</span> combinations(df_transacciones<span style="color:#f92672">.</span>columns, <span style="color:#ae81ff">2</span>):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Soporte del antecedente</span>
+</span></span><span style="display:flex;"><span>    soporte_a <span style="color:#f92672">=</span> df_transacciones[antecedente]<span style="color:#f92672">.</span>mean()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Calcular confianza</span>
+</span></span><span style="display:flex;"><span>    conf <span style="color:#f92672">=</span> confianza(antecedente, consecuente)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> conf <span style="color:#f92672">&gt;</span> umbral_confianza:
+</span></span><span style="display:flex;"><span>        asociaciones<span style="color:#f92672">.</span>append({
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#39;antecedente&#39;</span>: antecedente,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#39;consecuente&#39;</span>: consecuente,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#39;soporte_a&#39;</span>: round(soporte_a <span style="color:#f92672">*</span> <span style="color:#ae81ff">100</span>,<span style="color:#ae81ff">1</span>),
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#39;confianza&#39;</span>: round(conf <span style="color:#f92672">*</span> <span style="color:#ae81ff">100</span>,<span style="color:#ae81ff">1</span>),
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#39;lift&#39;</span>: round(lift(antecedente, consecuente),<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>        })
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Convertir las asociaciones en un DataFrame</span>
+</span></span><span style="display:flex;"><span>df_asociaciones <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(asociaciones)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Ordenar las asociaciones por confianza de mayor a menor</span>
+</span></span><span style="display:flex;"><span>df_asociaciones<span style="color:#f92672">.</span>sort_values(by<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;lift&#39;</span>, ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>, inplace<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>df_asociaciones
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># El bucle ha generado 399 reglas (399 combinaciones). Ahora le toca decidir al usuario cliente cuales son las reglas que nos merece la pena poner nuestros esfuerzos en base al lift: todas aquellas que contengan un lift superior a 1, a 1.5, a 2, etc...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Generamos una tabla de los productos únicos con su &#39;id_producto&#39;, &#39;id_seccion&#39;, &#39;id_departamento&#39; para enriquecer la tabla de reglas</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>productos_unicos<span style="color:#f92672">=</span>df[[<span style="color:#e6db74">&#39;id_producto&#39;</span>,<span style="color:#e6db74">&#39;id_seccion&#39;</span>,<span style="color:#e6db74">&#39;id_departamento&#39;</span>,<span style="color:#e6db74">&#39;nombre_producto&#39;</span>]]<span style="color:#f92672">.</span>drop_duplicates()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>productos_unicos<span style="color:#f92672">.</span>head()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Unimos la tabla del algortimo con la tabla de los productos unicos</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>df_asociaciones_enriquecido<span style="color:#f92672">=</span>df_asociaciones<span style="color:#f92672">.</span>merge(productos_unicos,left_on<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;antecedente&#39;</span>,right_on<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;nombre_producto&#39;</span>,how<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;left&#39;</span>)<span style="color:#f92672">.</span>drop(columns<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;nombre_producto&#39;</span>])
+</span></span><span style="display:flex;"><span>df_asociaciones_enriquecido<span style="color:#f92672">.</span>columns<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;antecedente&#39;</span>,<span style="color:#e6db74">&#39;consecuente&#39;</span>,<span style="color:#e6db74">&#39;soporte_a&#39;</span>,<span style="color:#e6db74">&#39;confianza&#39;</span>,<span style="color:#e6db74">&#39;lift&#39;</span>,<span style="color:#e6db74">&#39;id_producto_a&#39;</span>,<span style="color:#e6db74">&#39;id_seccion_a&#39;</span>,<span style="color:#e6db74">&#39;id_departamento_a&#39;</span>]
+</span></span><span style="display:flex;"><span>df_asociaciones_enriquecido<span style="color:#f92672">.</span>head()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>df_asociaciones_enriquecido<span style="color:#f92672">.</span>to_csv(<span style="color:#e6db74">&#39;reglas.csv&#39;</span>, index<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>, sep<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;;&#39;</span>, decimal<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;,&#39;</span>)
+</span></span></code></pre></div><p><br><br></p>
+<h3 id="conclusiones-1">Conclusiones</h3>
+<!-- *umbral del lift?: reglas* -->
+<p>Con estas reglas entramos en la fase del trabajo donde debemos colaborar con otros departamentos de la empresa para explotar las reglas generadas. Ejemplos:</p>
+<p><strong>Departamento IT</strong>: podemos pasarle estas reglas directamente al departamento de informática para que las implementen en el recomendador de la página web.
+<br></p>
+<p><strong>Departamento Marketing/Negocio</strong>:</p>
+<ul>
+<li>Implementar las reglas no solo en el recomendador del producto concreto, también en el checkout de compra.<br><br></li>
+<li>Usar el historial de compras de los clientes y meter esos productos como input en nuestra tabla de reglas, con la intención de ofrecer directamente al cliente los productos del output a través de newsletter/email personalizado.<br><br></li>
+<li>Se podrían desarrollar nuevos productos: cestas y packs siguiendo las reglas con los productos que se compran frecuentemente juntos. Así a lo mejor, el cliente en vez de gastarse 5 euros en el producto individual decide optar por una cesta de 15 euros donde aparezca ese producto y otros, aumentando así el Ticket Medio de Compra. <br><br></li>
+<li>Las reglas también permiten la generación de cupones personalizados por cliente. No tiene sentido enviar a todos los clientes los mismos cupones con las mismas ofertas cuando tenemos información sobre el historial de compra de cada cliente. <br></li>
+<li>Etc.</li>
+</ul>
+<p><br><br></p>
+<h2 id="3-creación-de-cuadros-de-mando-con-powerbi">3. Creación de Cuadros de Mando con PowerBI</h2>
+<br>
+<h3 id="objetivos-2">Objetivos</h3>
+<p>El dashboard se comprondrá de dos hojas: en la primera hoja se incluirán gráficos y paneles que muestren la información relevante de las ventas en el último año, la fuente única de los datos; en la segunda hoja se incluirá la aplicación de <em>‘Market Basket Analysis’</em> de nuestro algoritmo en Python.</p>
+<p><u>Hoja 1</u>:
+Creación de la fuente única de los datos sobre las ventas para tomar acciones sobre ellos y que será común a todos los departamentos. Realizarlo en una herramienta profesional, como PowerBI.</p>
+<p><u>Hoja 2</u>:
+Crear un dashboard a modo de aplicación que contenga las reglas obtenidas con nuestro algoritmo de Python, y mediante filtros poder identificar los componentes de la técnica de <em>‘Market Basket Analysis’</em> (confianza, lift, antecedente, etc.) para cada sección y productos.
+<br><br></p>
+<h3 id="instrucciones-2">Instrucciones</h3>
+<p><strong>Hoja 1 y Hoja 2</strong>: Documento de Requerimientos Funcionales del Negocio.
+<br><br></p>
+<h3 id="diseño-analítico-2">Diseño Analítico</h3>
+<p><em>Mockup</em>: a gusto personal siempre que contenga los contenidos exigidos en el documento de Requerimientos (se ofrece una versión en el Documento de Requerimientos).
+<br><br></p>
+<h3 id="desarrollo-2">Desarrollo</h3>
+<div style="text-align: center; margin: 2rem 0;">
+  <!-- Enlace al dashboard con estilo de botón -->
+  <iframe title="desarrollo" width="900" height="600" src="https://app.powerbi.com/view?r=eyJrIjoiODQ4MWZkNTEtZmZlYi00MWNmLThlNzEtNWYwYTMwNmYzNzkxIiwidCI6ImZjNjYwMmVmLThlODgtNGYxZC1hMjA2LWUxNGEzYmMxOWFmMiIsImMiOjh9" frameborder="0" allowFullScreen="true"></iframe>
+  <p><br>
+    <a href="https://app.powerbi.com/view?r=eyJrIjoiODQ4MWZkNTEtZmZlYi00MWNmLThlNzEtNWYwYTMwNmYzNzkxIiwidCI6ImZjNjYwMmVmLThlODgtNGYxZC1hMjA2LWUxNGEzYmMxOWFmMiIsImMiOjh9" 
+       target="_blank" class="btn-contact">
+       Ver Dashboard
+    </a>
+  </p>
+</div>
+<h3 id="conclusiones-2">Conclusiones</h3>
+<p><br><br></p>
+
           </article>
 
           
@@ -531,7 +849,38 @@ Análisis de Ventas Ecommerce | Alicia Gil Matute
           
           <aside class="toc">
               <h5>Tabla de Contenidos</h5>
-              <div class="toc-content"><nav id="TableOfContents"></nav></div>
+              <div class="toc-content"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#contexto">Contexto</a></li>
+    <li><a href="#1-generación-de-insights-con-sql">1. Generación de Insights con SQL</a>
+      <ul>
+        <li><a href="#objetivos">Objetivos</a></li>
+        <li><a href="#instrucciones">Instrucciones</a></li>
+        <li><a href="#diseño-analítico">Diseño Analítico</a></li>
+        <li><a href="#desarrollo">Desarrollo</a></li>
+        <li><a href="#conclusiones">Conclusiones</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-creando-un-algoritmo-con-python">2. Creando un Algoritmo con Python</a>
+      <ul>
+        <li><a href="#objetivos-1">Objetivos</a></li>
+        <li><a href="#instrucciones-1">Instrucciones</a></li>
+        <li><a href="#diseño-analítico-1">Diseño Analítico</a></li>
+        <li><a href="#desarrollo-1">Desarrollo</a></li>
+        <li><a href="#conclusiones-1">Conclusiones</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-creación-de-cuadros-de-mando-con-powerbi">3. Creación de Cuadros de Mando con PowerBI</a>
+      <ul>
+        <li><a href="#objetivos-2">Objetivos</a></li>
+        <li><a href="#instrucciones-2">Instrucciones</a></li>
+        <li><a href="#diseño-analítico-2">Diseño Analítico</a></li>
+        <li><a href="#desarrollo-2">Desarrollo</a></li>
+        <li><a href="#conclusiones-2">Conclusiones</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
           </aside>
           
 
